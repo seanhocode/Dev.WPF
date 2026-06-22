@@ -8,5 +8,11 @@ namespace Example.Layout
         {
             InitializeComponent();
         }
+
+        public void OpenGridExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var gridExampleMainWindow = new Grid.MainWindow();
+            gridExampleMainWindow.Show();
+        }
     }
 }
