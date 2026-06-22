@@ -1,0 +1,24 @@
+﻿<Window x:Class="Example.Layout.Canvas.Example1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.Layout.Canvas"
+        mc:Ignorable="d"
+        Title="Example1Window" Height="450" Width="800">
+    <!--
+        1. Canvas 是一個可以讓子元素以絕對位置排列的容器
+        2. Canvas 的子元素可以使用 Canvas.Left 與 Canvas.Top 屬性來設定元素的左邊距與上邊距
+        3. Canvas 的子元素也可以使用 Canvas.Right 與 Canvas.Bottom 屬性來設定元素的右邊距與下邊距
+        4. Canvas 的子元素如果同時設定了 Left 與 Right，則會以 Left 為主，Right 會被忽略
+        5. Canvas 的子元素如果同時設定了 Top 與 Bottom，則會以 Top 為主，Bottom 會被忽略
+    -->
+    <Canvas>
+        <Button Content="Left:50, Top:50" Canvas.Left="50" Canvas.Top="50" />
+        <Button Content="Left:200, Top:100" Canvas.Left="200" Canvas.Top="100" />
+        <Button Content="Left:100, Top:200" Canvas.Left="100" Canvas.Top="200" />
+        <Button Content="Right:50, Bottom:50" Canvas.Right="50" Canvas.Bottom="50" />
+        <Button Content="Right:200, Bottom:100" Canvas.Right="200" Canvas.Bottom="100" />
+        <Button Content="Left:50, Top:150, Right:30, Bottom:40" Canvas.Left="50" Canvas.Top="150" Canvas.Right="30" Canvas.Bottom="40" />
+    </Canvas>
+</Window>

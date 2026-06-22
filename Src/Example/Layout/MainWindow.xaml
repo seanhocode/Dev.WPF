@@ -12,10 +12,12 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Content="GridExample" FontSize="36" Click="OpenGridExampleWindow" />
         <Button Grid.Row="1" Content="StackPanelExample" FontSize="36" Click="OpenStackPanelExampleWindow" />
         <Button Grid.Row="2" Content="WrapPanelExample" FontSize="36" Click="OpenWrapPanelExampleWindow" />
         <Button Grid.Row="3" Content="DockPanelExample" FontSize="36" Click="OpenDockPanelExampleWindow" />
+        <Button Grid.Row="4" Content="CanvasExample" FontSize="36" Click="OpenCanvasExampleWindow" />
     </Grid>
 </Window>

@@ -32,5 +32,10 @@ namespace Example.Layout
             var dockPanelExampleMainWindow = new DockPanel.MainWindow();
             dockPanelExampleMainWindow.Show();
         }
+        public void OpenCanvasExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var canvasExampleMainWindow = new Canvas.MainWindow();
+            canvasExampleMainWindow.Show();
+        }
     }
 }
