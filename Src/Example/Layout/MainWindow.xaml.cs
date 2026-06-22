@@ -26,5 +26,11 @@ namespace Example.Layout
             var wrapPanelExampleMainWindow = new WrapPanel.MainWindow();
             wrapPanelExampleMainWindow.Show();
         }
+
+        public void OpenDockPanelExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var dockPanelExampleMainWindow = new DockPanel.MainWindow();
+            dockPanelExampleMainWindow.Show();
+        }
     }
 }
