@@ -37,5 +37,11 @@ namespace Example.Layout
             var canvasExampleMainWindow = new Canvas.MainWindow();
             canvasExampleMainWindow.Show();
         }
+
+        public void OpenViewBoxExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var viewBoxExampleMainWindow = new ViewBox.MainWindow();
+            viewBoxExampleMainWindow.Show();
+        }
     }
 }
