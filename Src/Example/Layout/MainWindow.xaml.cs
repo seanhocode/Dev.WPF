@@ -20,5 +20,11 @@ namespace Example.Layout
             var stackPanelExampleMainWindow = new StackPanel.MainWindow();
             stackPanelExampleMainWindow.Show();
         }
+
+        public void OpenWrapPanelExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var wrapPanelExampleMainWindow = new WrapPanel.MainWindow();
+            wrapPanelExampleMainWindow.Show();
+        }
     }
 }

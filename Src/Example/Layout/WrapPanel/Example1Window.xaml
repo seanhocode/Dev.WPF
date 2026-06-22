@@ -1,0 +1,26 @@
+﻿<Window x:Class="Example.Layout.WrapPanel.Example1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.Layout.WrapPanel"
+        mc:Ignorable="d"
+        Title="Example1Window" Height="200" Width="200">
+    <!--
+        1. WrapPanel 是一個可以將子元素依照指定方向(Orientation)排列的容器
+        2. 與StackPanel類似，差別為當子元素超出容器大小時會自動換行
+        3. WrapPanel 的 Orientation 預設為 Horizontal，代表子元素會水平排列
+        4. WrapPanel 的 Orientation 設定為 Vertical，代表子元素會垂直排列
+        5. WrapPanel 的子元素會依照加入的順序排列
+    -->
+    <WrapPanel>
+        <Button Content="Button1" />
+        <Button Content="Button2" />
+        <Button Content="Button3" />
+        <Button Content="Button4" />
+        <Button Content="Button5" />
+        <Button Content="Button6" />
+        <Button Content="Button7" />
+        <Button Content="Button8" />
+    </WrapPanel>
+</Window>
