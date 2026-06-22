@@ -14,5 +14,11 @@ namespace Example.Layout
             var gridExampleMainWindow = new Grid.MainWindow();
             gridExampleMainWindow.Show();
         }
+
+        public void OpenStackPanelExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var stackPanelExampleMainWindow = new StackPanel.MainWindow();
+            stackPanelExampleMainWindow.Show();
+        }
     }
 }

@@ -1,17 +1,17 @@
-﻿<Window x:Class="Example.Layout.MainWindow"
+﻿<Window x:Class="Example.Layout.StackPanel.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Example.Layout"
+        xmlns:local="clr-namespace:Example.Layout.StackPanel"
         mc:Ignorable="d"
-        Title="LayoutExample" Height="450" Width="800">
+        Title="StackPanelExample" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="GridExample" FontSize="36" Click="OpenGridExampleWindow" />
-        <Button Grid.Row="1" Content="StackPanelExample" FontSize="36" Click="OpenStackPanelExampleWindow" />
+        <Button Grid.Row="0" Content="Example1" Click="OpenExample1Window" FontSize="36" />
+        <Button Grid.Row="1" Content="Example2" Click="OpenExample2Window" FontSize="36" />
     </Grid>
 </Window>
