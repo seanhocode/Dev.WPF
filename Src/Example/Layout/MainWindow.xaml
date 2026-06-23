@@ -14,6 +14,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Content="GridExample" FontSize="36" Click="OpenGridExampleWindow" />
         <Button Grid.Row="1" Content="StackPanelExample" FontSize="36" Click="OpenStackPanelExampleWindow" />
@@ -21,5 +22,6 @@
         <Button Grid.Row="3" Content="DockPanelExample" FontSize="36" Click="OpenDockPanelExampleWindow" />
         <Button Grid.Row="4" Content="CanvasExample" FontSize="36" Click="OpenCanvasExampleWindow" />
         <Button Grid.Row="5" Content="ViewBoxExample" FontSize="36" Click="OpenViewBoxExampleWindow" />
+        <Button Grid.Row="6" Content="FrameExample" FontSize="36" Click="OpenFrameExampleWindow" />
     </Grid>
 </Window>

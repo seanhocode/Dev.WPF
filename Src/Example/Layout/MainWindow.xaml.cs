@@ -43,5 +43,11 @@ namespace Example.Layout
             var viewBoxExampleMainWindow = new ViewBox.MainWindow();
             viewBoxExampleMainWindow.Show();
         }
+
+        public void OpenFrameExampleWindow(object sender, RoutedEventArgs e)
+        {
+            var frameExampleMainWindow = new Frame.MainWindow();
+            frameExampleMainWindow.Show();
+        }
     }
 }
