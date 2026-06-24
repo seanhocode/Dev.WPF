@@ -14,4 +14,10 @@ public partial class MainWindow : Window
         var layoutExampleMainWindow = new Layout.MainWindow();
         layoutExampleMainWindow.Show();
     }
+
+    public void OpenStyleExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var styleExampleMainWindow = new Style.MainWindow();
+        styleExampleMainWindow.Show();
+    }
 }

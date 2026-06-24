@@ -1,19 +1,19 @@
-﻿<Window x:Class="Example.MainWindow"
+﻿<Window x:Class="Example.Style.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Example"
+        xmlns:local="clr-namespace:Example.Style"
         mc:Ignorable="d"
-        Title="Dev.WPF.Example" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Hello, World!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />
-        <Button Grid.Row="1" Content="LayoutExample" FontSize="36" Click="OpenLayoutExampleWindow" />
-        <Button Grid.Row="2" Content="StyleExample" FontSize="36" Click="OpenStyleExampleWindow" />
+        <Button Grid.Row="0" Content="基本範例" FontSize="36" Click="OpenExample1Window" />
+        <Button Grid.Row="1" Content="繼承與套用範例" FontSize="36" Click="OpenExample2Window" />
+        <Button Grid.Row="2" Content="觸發器範例" FontSize="36" Click="OpenExample3Window" />
     </Grid>
 </Window>
