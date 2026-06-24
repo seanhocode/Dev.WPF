@@ -10,6 +10,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="Example1" Click="OpenExample1Window" FontSize="36" />
+        <Button Grid.Row="0" Content="基本範例" Click="OpenExample1Window" FontSize="36" />
     </Grid>
 </Window>

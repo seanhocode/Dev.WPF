@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:Example.Layout.Grid"
         mc:Ignorable="d"
         Title="Example2Window" Height="600" Width="1200">
+    <!--
+        1. 如果有多格都使用 * 來定義大小，則會均分剩下的空間
+        2. 想要讓大小按比例分配，也可以用 [Number]* 來表示此格需要占用的比例
+        3. 想要讓 Grid 內部的控件佔據多個網格，可以設定 Grid.RowSpan 或是 Grid.ColumnSpan
+    -->
     <Grid>
-        <!--
-            1. 如果有多格都使用 * 來定義大小，則會均分剩下的空間
-            2. 想要讓大小按比例分配，也可以用 [Number]* 來表示此格需要占用的比例
-            3. 想要讓 Grid 內部的控件佔據多個網格，可以設定 Grid.RowSpan 或是 Grid.ColumnSpan
-        -->
         <Grid.RowDefinitions>
             <RowDefinition Height="4*" />
             <RowDefinition Height="2*" />

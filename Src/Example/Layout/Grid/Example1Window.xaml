@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:Example.Layout.Grid"
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
+    <!--
+        1. 分別定義了兩個 ColumnDefinition 與 RowDefinition => 定義了一個 2*2 的網格
+        2. 可以設定網格中行(Column)的寬度(Width)與列(Row)的高度(Height)
+        3. 寬度跟高度除了可以用數字表示之外，也可以用 auto 與 * 表示
+            1. auto => 代表網格大小會自動符合內部元素的大小
+            2.  *   => 表示扣除其他格佔的空間，剩下的空間就是本格的大小
+        4. 當 Grid 大小改變時，Grid 的網格大小會符合定義隨之改變
+        5. 不應過度使用 auto 與 *，因為 Grid 需要不斷計算每個網格的大小，過度使用會影響效能
+    -->
     <Grid>
-        <!--
-            1. 分別定義了兩個 ColumnDefinition 與 RowDefinition => 定義了一個 2*2 的網格
-            2. 可以設定網格中行(Column)的寬度(Width)與列(Row)的高度(Height)
-            3. 寬度跟高度除了可以用數字表示之外，也可以用 auto 與 * 表示
-                1. auto => 代表網格大小會自動符合內部元素的大小
-                2.  *   => 表示扣除其他格佔的空間，剩下的空間就是本格的大小
-            4. 當 Grid 大小改變時，Grid 的網格大小會符合定義隨之改變
-            5. 不應過度使用 auto 與 *，因為 Grid 需要不斷計算每個網格的大小，過度使用會影響效能
-        -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
