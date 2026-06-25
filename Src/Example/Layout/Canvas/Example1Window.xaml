@@ -7,18 +7,20 @@
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
     <!--
-        1. Canvas 是一個可以讓子元素以絕對位置排列的容器
-        2. Canvas 的子元素可以使用 Canvas.Left 與 Canvas.Top 屬性來設定元素的左邊距與上邊距
-        3. Canvas 的子元素也可以使用 Canvas.Right 與 Canvas.Bottom 屬性來設定元素的右邊距與下邊距
-        4. Canvas 的子元素如果同時設定了 Left 與 Right，則會以 Left 為主，Right 會被忽略
-        5. Canvas 的子元素如果同時設定了 Top 與 Bottom，則會以 Top 為主，Bottom 會被忽略
+        Canvas:
+            可以讓子元素以絕對位置排列的容器，
+            如果同時設定了 Left 與 Right，則會以 Left 為主，Right 會被忽略，
+            如果同時設定了 Top 與 Bottom，則會以 Top 為主，Bottom 會被忽略
     -->
     <Canvas>
+        <!--Canvas.Left 與 Canvas.Top 屬性: 設定元素的左邊距與上邊距-->
         <Button Content="Left:50, Top:50" Canvas.Left="50" Canvas.Top="50" />
+        <!--Canvas.Right 與 Canvas.Bottom 屬性: 設定元素的右邊距與下邊距-->
+        <Button Content="Right:50, Bottom:50" Canvas.Right="50" Canvas.Bottom="50" />
+        <!--Canvas.Left 與 Canvas.Top 屬性優先於 Canvas.Right 與 Canvas.Bottom 屬性-->
+        <Button Content="Left:50, Top:150, Right:30, Bottom:40" Canvas.Left="50" Canvas.Top="150" Canvas.Right="30" Canvas.Bottom="40" />
         <Button Content="Left:200, Top:100" Canvas.Left="200" Canvas.Top="100" />
         <Button Content="Left:100, Top:200" Canvas.Left="100" Canvas.Top="200" />
-        <Button Content="Right:50, Bottom:50" Canvas.Right="50" Canvas.Bottom="50" />
         <Button Content="Right:200, Bottom:100" Canvas.Right="200" Canvas.Bottom="100" />
-        <Button Content="Left:50, Top:150, Right:30, Bottom:40" Canvas.Left="50" Canvas.Top="150" Canvas.Right="30" Canvas.Bottom="40" />
     </Canvas>
 </Window>

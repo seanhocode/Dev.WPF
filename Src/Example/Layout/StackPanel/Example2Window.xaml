@@ -6,12 +6,7 @@
         xmlns:local="clr-namespace:Example.Layout.StackPanel"
         mc:Ignorable="d"
         Title="Example2Window" Height="450" Width="800">
-    <!--
-        1. StackPanel 是一個可以將子元素依照指定方向(Orientation)排列的容器
-        2. StackPanel 的 Orientation 預設為 Vertical，代表子元素會垂直排列
-        3. StackPanel 的 Orientation 設定為 Horizontal，代表子元素會水平排列
-        4. StackPanel 的子元素會依照加入的順序排列
-    -->
+    <!--Orientation 設定為 Horizontal，代表子元素會水平排列-->
     <StackPanel Orientation="Horizontal">
         <Button Content="Auto" FontSize="36" />
         <Button Content="200*100" Width="200" Height="100"  FontSize="36" />

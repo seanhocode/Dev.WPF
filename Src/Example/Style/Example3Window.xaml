@@ -14,8 +14,8 @@
         <Grid.Resources>
             <Style TargetType="Button">
                 <!--
-                    1. Style 可以透過 Trigger 來設定控件的屬性值，當觸發條件成立時，會套用 Trigger 中的 Setter 設定
-                    2. 當條件不再滿足時，系統會自動將屬性還原到觸發前的狀態
+                    Style 可以透過 Trigger 來設定控件的屬性值，當觸發條件成立時，會套用 Trigger 中的 Setter 設定，
+                    當條件不再滿足時，系統會自動將屬性還原到觸發前的狀態
                 -->
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">

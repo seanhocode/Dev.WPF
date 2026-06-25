@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
     <!--
-        1. Viewbox 是一個可以讓子元素自動縮放的容器
-        2. Viewbox 的子元素會依照 Viewbox 的大小自動縮放，保持原本的比例
-        3. 需注意，在將 Canvas 放入 ViewBox 時需要設定 Canvas 的大小，因 ViewBox 內控件的預設大小是 0
+        Viewbox:
+            一個可以讓子元素自動縮放的容器，
+            Viewbox 的子元素會依照 Viewbox 的大小自動縮放，保持原本的比例，
     -->
     <Viewbox>
+        <!--需注意，在將 Canvas 放入 ViewBox 時需要設定 Canvas 的大小，因 ViewBox 內控件的預設大小是 0-->
         <Canvas Height="430" Width="800">
             <Button Content="Left:50, Top:50" Canvas.Left="50" Canvas.Top="50" />
             <Button Content="Left:200, Top:100" Canvas.Left="200" Canvas.Top="100" />

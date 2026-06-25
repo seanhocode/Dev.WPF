@@ -8,12 +8,18 @@
         Title="Example1Window" Height="450" Width="800">
     <Grid>
         <!--
-            1. Frame 是一個支援導覽與歷史紀錄的容器控件，能在單一視窗內動態載入並切換不同的頁面 (Page) 內容
-            2. Frame 控件會自動管理頁面的歷史紀錄，使用者可以透過內建的導覽 UI 或程式碼來實現前進、後退等功能
-            3. Frame 控件可以透過 Source 屬性指定要載入的 Page，透過 Navigate() 方法來切換頁面
-            4. NavigationUIVisibility 屬性可以控制是否顯示內建的導覽 UI
-            5. BorderThickness 和 BorderBrush 屬性可以用來設定 Frame 的邊框樣式
-            6. 在 XAML 中要先設定好 Frame 的 Name 屬性，這樣在 Code behind 中才能使用該控件
+            Frame:
+                個支援導覽與歷史紀錄的容器控件，能在單一視窗內動態載入並切換不同的頁面 (Page) 內容，
+                可以透過 Source 屬性指定要載入的 Page，透過 Navigate() 方法來切換頁面，
+                Frame 控件會自動管理頁面的歷史紀錄，使用者可以透過內建的導覽 UI 或程式碼來實現前進、後退等功能
+            Name:
+                可以用來在 Code behind (.cs) 中取得該控件的實例，進而操作該控件的屬性與方法
+            NavigationUIVisibility:
+                可以控制是否顯示內建的導覽 UI
+            BorderThickness:
+                可以用來設定 Frame 的邊框厚度
+            BorderBrush:
+                可以用來設定 Frame 的邊框顏色
         -->
         <Frame Name="Example1Frame"
                Source="Page/Example1Page1.xaml"

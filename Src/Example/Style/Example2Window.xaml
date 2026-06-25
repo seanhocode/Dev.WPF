@@ -16,17 +16,14 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.Resources>
-            <!--
-                1. Style 可以透過 BasedOn 屬性來繼承其他 Style 的設定
-                2. 可定義多種 Style 並設定 x:Key 屬性來命名，並透過 StaticResource 或 DynamicResource 來指定引用 (必須要指定控件的 Style 屬性才能套用有設定 x:Key 的 Style)
-                3. 也可以不設定 x:Key 屬性，這樣就會成為預設的 Style，所有沒有指定 Style 的控件都會使用這個預設的 Style
-            -->
+            <!--可定義多種 Style 並設定 x:Key 屬性來命名，並透過 StaticResource 或 DynamicResource 來指定引用 (必須被控件的 Style 指定才能套用有設定 x:Key 的 Style)-->
             <Style x:Key="ButtonStyleBase" TargetType="Button">
                 <Setter Property="FontSize" Value="36" />
                 <Setter Property="Margin" Value="50" />
                 <Setter Property="Padding" Value="10,10" />
             </Style>
-            
+
+            <!--Style 可以透過 BasedOn 屬性來繼承其他 Style 的設定-->
             <Style x:Key="ButtonStyleBlue" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
                 <Setter Property="Background" Value="LightBlue" />
                 <Setter Property="Foreground" Value="DarkBlue" />
@@ -37,6 +34,7 @@
                 <Setter Property="Foreground" Value="DarkRed" />
             </Style>
             
+            <!--也可以不設定 x:Key 屬性，這樣就會成為預設的 Style，所有沒有指定 Style 的控件都會使用這個預設的 Style-->
             <Style TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
                 <Setter Property="Background" Value="LightGreen" />
                 <Setter Property="Foreground" Value="DarkGreen" />

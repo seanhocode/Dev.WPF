@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
     <!--
-        1. StackPanel 是一個可以將子元素依照指定方向(Orientation)排列的容器
-        2. StackPanel 的 Orientation 預設為 Vertical，代表子元素會垂直排列
-        3. StackPanel 的 Orientation 設定為 Horizontal，代表子元素會水平排列
-        4. StackPanel 的子元素會依照加入的順序排列
+        StackPanel:
+            可以將子元素依照指定方向(Orientation)排列的容器，
+            StackPanel 的 Orientation 預設為 Vertical，代表子元素會垂直排列，
+            StackPanel 的子元素會依照加入的順序排列
     -->
     <StackPanel>
         <Button Content="Auto" FontSize="36" />

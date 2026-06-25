@@ -8,17 +8,20 @@
         Title="Example1Window" Height="450" Width="800">
     <WrapPanel>
         <WrapPanel.Resources>
-            <!-- 
-                1. Style 統一設定各控件的樣式，避免重複設定
-                2. Style 透過 TargetType 屬性來設定目標的類別
-                3. Style 透過 Setter 屬性來設定目標的屬性值
-                4. Style 可以透過 Key 屬性來設定樣式的名稱，並透過 StaticResource 或 DynamicResource 來引用
-                5. 需要把 Style 放入 Resources 中，讓區塊裡的代碼可以共用這個 Style
+            <!--
+                Style:
+                    可自訂設定各控件的樣式，
+                    透過 TargetType 屬性來設定目標的類別，
+                    透過 Setter 屬性來設定目標的屬性值，
+                    需要把 Style 放入 Resources 中，讓區塊裡的代碼可以共用這個 Style
             -->
             <Style TargetType="Button">
                 <Setter Property="Background" Value="LightBlue" />
                 <Setter Property="Foreground" Value="DarkBlue" />
-                <Setter Property="FontSize" Value="36" />
+                <!--Setter 除了在簡單屬性設定外，也可以用 Setter.Value 來設定複雜屬性，Template.Example2 有更詳細範例-->
+                <Setter Property="FontSize">
+                    <Setter.Value>36</Setter.Value>
+                </Setter>
                 <Setter Property="Margin" Value="50" />
                 <Setter Property="Padding" Value="10,10" />
             </Style>
