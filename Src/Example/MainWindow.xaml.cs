@@ -20,4 +20,10 @@ public partial class MainWindow : Window
         var styleExampleMainWindow = new Style.MainWindow();
         styleExampleMainWindow.Show();
     }
+
+    public void OpenTemplateExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var templateExampleMainWindow = new Template.MainWindow();
+        templateExampleMainWindow.Show();
+    }
 }

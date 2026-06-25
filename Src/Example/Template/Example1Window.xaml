@@ -1,0 +1,73 @@
+﻿<Window x:Class="Example.Template.Example1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.Template"
+        mc:Ignorable="d"
+        Title="Example1Window" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Content="DefaultButton" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />
+        <Button Content="CustomButton" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" >
+            <!--
+                Template: 
+                    掌控控件的顯示方式，所有的控件都是以預設的範本來顯示，
+                    Template 覆寫控件的範本就可以讓控件按照自訂設計顯示
+            -->
+            <Button.Template>
+                <!--
+                    ControlTemplate:
+                        控制項的外觀藍圖，ControlTemplate 內部只能有一個根元素 (Root Element)，
+                        若要包含多個元素，需使用容器元素 (Container Element) 包裹，例如 Grid、StackPanel 等
+                -->
+                <ControlTemplate TargetType="Button">
+                    <!--
+                        這裡使用 Grid 是因為 Grid 會依據元素宣告順序「由下往上」堆疊的特性，達成圖層堆疊 (Z-Index) 的效果:
+                            1. 第一層：<Rectangle> 畫出了一個帶有圓角的矩形
+                            2. 第二層：<ContentPresenter> 被疊在矩形上面，用來呈現 Button 的 Content
+                    -->
+                    <Grid>
+                        <!--
+                            Rectangle:
+                                繪製一個長方形或正方形的幾何區塊
+                            Fill:
+                                設定填充的顏色或圖案
+                            RadiusX 與 RadiusY:
+                                設定矩形的圓角半徑，值越大圓角越大
+                            TemplateBinding: 
+                                將 Button 的屬性值綁定到 ControlTemplate 中的元素，外部修改 Button 的屬性值會自動反映到此元素
+                        -->
+                        <Rectangle RadiusX="5" RadiusY="5" 
+                                   Fill="{TemplateBinding Background}"
+                                   Width="{TemplateBinding Width}"
+                                   Height="{TemplateBinding Height}"/>
+                        <!--
+                            ContentPresenter: 
+                                內容的安放處，Button 的 Content 會被自動投射並顯示在此
+                        -->
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Grid>
+                    <!--
+                        Trigger:
+                            觸發器，當 Button 的屬性值符合指定條件時，會自動套用指定的 Setter 屬性值，
+                            須定義在 ControlTemplate 中
+                    -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightBlue" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>LightGreen</Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
