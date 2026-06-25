@@ -20,5 +20,11 @@ namespace Example.Layout.Grid
             Example2Window example2Window = new Example2Window();
             example2Window.Show();
         }
+
+        public void OpenExample3Window(object sender, RoutedEventArgs e)
+        {
+            Example3Window example3Window = new Example3Window();
+            example3Window.Show();
+        }
     }
 }
