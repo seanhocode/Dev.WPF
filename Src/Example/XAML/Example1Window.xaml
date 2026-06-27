@@ -1,0 +1,44 @@
+﻿<!--
+    xmlns: 
+        相當於 C# 中的 using，用來引用命名空間 (Namespace)
+    xmlns:[Namespace]: 
+        引用其他空間，並將該空間命名為 [Namespace]
+            ex. xmlns:model="clr-[Namespace]" 相當於 C# 的 using model = [Namespace];
+        clr-namespace:
+            當要在 XAML 中引用不是微軟內建，而是你自己或第三方寫的 C# 程式碼時使用，對應到在 C# 程式碼裡實際寫的 namespace，
+            assembly 則是代表該程式碼所在的編譯檔名
+                ex. xmlns:model="clr-namespace:Example.Core.Model.XAML;assembly=Example.Core" 代表此 XAML 對應到 C# 程式碼裡的 namespace Example.Core.Model.XAML，且該程式碼在 Example.Core.dll 裡
+    x:Class: 
+        定義此 XAML 的類別名稱，對應到 C# 程式碼裡實際寫的 namespace 與 class name 
+            ex. x:Class="Example.XAML.Example1Window" 代表此 XAML 對應到 C# 程式碼裡的 namespace Example.XAML 與 class Example1Window
+            P.S. C# 端的 class 必須宣告為 partial (部分類別) 才能與 XAML 完美結合 (XAML 是一半的類別，C# 是一半的類別)
+            P.S. 使用 x: 是因為裡面定義了 xmlns:x，最好不要改，因此命名已是全球通用標準，且畫面設計工具 (Designer)、自動補全 (IntelliSense) 等工具很多時候是寫死只認 x:
+            P.S. 在 XAML 中，x: 不只有 Class，還有其他 x: 開頭的語法
+            P.S. 於 XAML 中定義的語法，沒有 x: 的是在做 UI (ex. <Button />)；有 x: 的是在做設定與連結 (ex. x:Name)
+    mc:Ignorable="[Namespace]":
+        編譯並執行這支程式時，忽略所有以 [Namespace]: 開頭的屬性
+            P.S. d: 的屬性只會在 Visual Studio 的設計預覽畫面上生效，通常是用來做 UI 設計時的輔助工具，需忽略 d: 避免被這些假資料干擾或因找不到 :d 導致程式崩潰
+-->
+<Window x:Class="Example.XAML.Example1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.XAML"
+        xmlns:model="clr-namespace:Example.Core.Model.XAML;assembly=Example.Core"
+        mc:Ignorable="d"
+        Title="{x:Static model:Example1Definition.Title}" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static model:Example1Definition.Description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static model:Example1Definition.XAMLShouldDo}" FontSize="24" />
+        <Label Grid.Row="1" Grid.Column="1" Content="{x:Static model:Example1Definition.CSharpShouldDo}" FontSize="24" />
+    </Grid>
+</Window>

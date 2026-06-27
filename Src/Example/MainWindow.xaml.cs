@@ -26,4 +26,10 @@ public partial class MainWindow : Window
         var templateExampleMainWindow = new Template.MainWindow();
         templateExampleMainWindow.Show();
     }
+
+    public void OpenXAMLExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var xamlExampleMainWindow = new XAML.MainWindow();
+        xamlExampleMainWindow.Show();
+    }
 }
