@@ -33,6 +33,28 @@ namespace Example.AttachedProperty.Extension
         public static bool GetIsEnableWatcher(DependencyObject obj) => (bool)obj.GetValue(IsEnableWatcherProperty);
         public static void SetIsEnableWatcher(DependencyObject obj, bool value) => obj.SetValue(IsEnableWatcherProperty, value);
 
+
+        public static readonly DependencyProperty HasTextProperty =
+            DependencyProperty.RegisterAttached(
+                "HasText",
+                typeof(bool),
+                typeof(TextBoxExtension),
+                new PropertyMetadata(default(bool)));
+
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        public static bool GetHasText(DependencyObject obj) => (bool)obj.GetValue(HasTextProperty);
+        public static void SetHasText(DependencyObject obj, bool value) => obj.SetValue(HasTextProperty, value);
+
+        public static readonly DependencyProperty ChangeCountProperty =
+            DependencyProperty.RegisterAttached(
+                "ChangeCount",
+                typeof(int),
+                typeof(TextBoxExtension),
+                new PropertyMetadata(default(int)));
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        public static int GetChangeCount(DependencyObject obj) => (int)obj.GetValue(ChangeCountProperty);
+        public static void SetChangeCount(DependencyObject obj, int value) => obj.SetValue(ChangeCountProperty, value);
+
         /// <summary>
         /// 當 IsEnableWatcher 附加屬性的值發生改變時所觸發的回呼方法，
         /// 負責根據傳入的新值 (True/False)，來動態註冊或解除綁定 TextBox 的 TextChanged 事件
@@ -58,7 +80,8 @@ namespace Example.AttachedProperty.Extension
             //此 textBox 為觸發 TextChanged 事件的 TextBox 控件
             if (sender is TextBox textBox)
             {
-                // Customized logic
+                SetHasText(textBox, !string.IsNullOrEmpty(textBox.Text));
+                SetChangeCount(textBox, GetChangeCount(textBox) + 1);
             }
         }
     }

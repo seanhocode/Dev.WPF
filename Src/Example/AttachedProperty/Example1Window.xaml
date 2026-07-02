@@ -11,6 +11,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -20,16 +24,55 @@
         <TextBox Grid.Row="0" Grid.Column="0" 
             Grid.ColumnSpan="2"
             FontSize="36"
-            Name="textBox" 
+            Name="textBox1" 
             extension:TextBoxExtension.IsEnableWatcher="True" />
 
         <Label Grid.Row="1" Grid.Column="0"
-            Content="Is watching:"
+            Content="Is TextBox1 has text:"
             FontSize="36"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
         <Label Grid.Row="1" Grid.Column="1"
-            Content="{Binding ElementName=textBox, Path=(extension:TextBoxExtension.IsEnableWatcher)}"
+            Content="{Binding ElementName=textBox1, Path=(extension:TextBoxExtension.HasText)}"
+            FontSize="36"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <Label Grid.Row="2" Grid.Column="0"
+            Content="TextBox1 total change count:"
+            FontSize="24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="1"
+            Content="{Binding ElementName=textBox1, Path=(extension:TextBoxExtension.ChangeCount)}"
+            FontSize="36"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox Grid.Row="3" Grid.Column="0" 
+            Grid.ColumnSpan="2"
+            FontSize="36"
+            Name="textBox2" 
+            extension:TextBoxExtension.IsEnableWatcher="False" />
+
+        <Label Grid.Row="4" Grid.Column="0"
+            Content="Is TextBox2 enable Watch:"
+            FontSize="24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <Label Grid.Row="4" Grid.Column="1"
+            Content="{Binding ElementName=textBox2, Path=(extension:TextBoxExtension.IsEnableWatcher)}"
+            FontSize="36"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <Label Grid.Row="5" Grid.Column="0"
+            Content="TextBox2 total change count:"
+            FontSize="24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <Label Grid.Row="5" Grid.Column="1"
+            Content="{Binding ElementName=textBox2, Path=(extension:TextBoxExtension.ChangeCount)}"
             FontSize="36"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
