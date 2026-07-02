@@ -4,9 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.AttachedProperty"
+        xmlns:extension="clr-namespace:Example.AttachedProperty.Extension"
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Row="0" Grid.Column="0" 
+            Grid.ColumnSpan="2"
+            FontSize="36"
+            Name="textBox" 
+            extension:TextBoxExtension.IsEnableWatcher="True" />
+
+        <Label Grid.Row="1" Grid.Column="0"
+            Content="Is watching:"
+            FontSize="36"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="1"
+            Content="{Binding ElementName=textBox, Path=(extension:TextBoxExtension.IsEnableWatcher)}"
+            FontSize="36"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
     </Grid>
 </Window>
