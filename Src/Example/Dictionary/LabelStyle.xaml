@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="LabelStyleBase" TargetType="Label">
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="LightGray" />
+    </Style>
+
+    <Style x:Key="LabelStyleBlue" TargetType="Label" BasedOn="{StaticResource LabelStyleBase}">
+        <Setter Property="Foreground" Value="Blue" />
+    </Style>
+
+    <Style x:Key="LabelStyleRed" TargetType="Label" BasedOn="{StaticResource LabelStyleBase}">
+        <Setter Property="Foreground" Value="Red" />
+    </Style>
+
+</ResourceDictionary>

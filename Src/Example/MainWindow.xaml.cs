@@ -32,4 +32,10 @@ public partial class MainWindow : Window
         var xamlExampleMainWindow = new XAML.MainWindow();
         xamlExampleMainWindow.Show();
     }
+
+    public void OpenResourceExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var resourceExampleMainWindow = new Resource.MainWindow();
+        resourceExampleMainWindow.Show();
+    }
 }
