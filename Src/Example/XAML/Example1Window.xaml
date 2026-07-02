@@ -37,8 +37,11 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <!--在 XAML 中，每一個 XML 標籤都代表一個 .NET 類別（物件實體）-->
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static model:Example1Definition.Description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />
+        <!--當定義 <Label> 時，XAML 解析器會在背景建立了一個 System.Windows.Controls.Label 的實體-->
         <Label Grid.Row="1" Grid.Column="0" Content="{x:Static model:Example1Definition.XAMLShouldDo}" FontSize="24" />
+        <!--控件的外觀與行為，可以透過在標籤內加入 屬性="值" 來設定，如 FontSize="24" 代表將 Label 的字型大小設定為 24-->
         <Label Grid.Row="1" Grid.Column="1" Content="{x:Static model:Example1Definition.CSharpShouldDo}" FontSize="24" />
     </Grid>
 </Window>
