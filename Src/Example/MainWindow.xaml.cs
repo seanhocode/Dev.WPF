@@ -38,4 +38,10 @@ public partial class MainWindow : Window
         var resourceExampleMainWindow = new Resource.MainWindow();
         resourceExampleMainWindow.Show();
     }
+
+    public void OpenAttachedPropertyExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var attachedPropertyExampleMainWindow = new AttachedProperty.MainWindow();
+        attachedPropertyExampleMainWindow.Show();
+    }
 }
