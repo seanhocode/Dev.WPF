@@ -14,6 +14,7 @@
                     透過 TargetType 屬性來設定目標的類別，
                     透過 Setter 屬性來設定目標的屬性值，
                     需要把 Style 放入 Resources 中，讓區塊裡的代碼可以共用這個 Style
+                    P.S. Style 本身是唯讀的(一旦套用就無法修改內部 Setter)
             -->
             <Style TargetType="Button">
                 <Setter Property="Background" Value="LightBlue" />
