@@ -9,7 +9,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="資源字典範例" FontSize="36" Click="OpenExample1Window" />
+        <Button Grid.Row="0" Content="基本範例" FontSize="36" Click="OpenExample1Window" />
+        <Button Grid.Row="1" Content="資源字典範例" FontSize="36" Click="OpenExample2Window" />
     </Grid>
 </Window>

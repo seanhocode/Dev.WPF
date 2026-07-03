@@ -5,38 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.Resource"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="Example1Window" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="MainGrid">
+        <!--
+            Resources:
+                WPF 裡面所有控件都有 Resources 屬性，
+                用來集中存放、管理並重複使用各種資源或物件，
+                透過它，可以將顏色、樣式 (Styles)、控制項範本 (Templates)、動畫或資料物件定義在一個集中的地方，
+                並在應用程式的不同區域多次引用它們。
+
+            Resources的作用範圍:
+                僅止於控件內部而已，在其他視窗中無法使用此視窗的 Resources。
+                    ex. <Window.Resources> 只能在定義的 Window 內部使用
+                    ex. <Grid.Resources> 只能在定義的 Grid 內部使用
+                如果想要讓某個資源被整個程式共享，那可以將資源放入 App.xaml 中的 <Application.Resources> 區塊中。
+
+            引用資源:
+                利用 {StaticResource } 或 {DynamicResource } 來引用資源:
+                    StaticResource: 在 XAML 載入/解析時 (Load time) 就會解析資源，適合不會變動的資源，效能較好
+                    DynamicResource: 在執行時才會解析資源，適合會變動的資源，效能較差
+        -->
         <Grid.Resources>
-            <!--
-                ResourceDictionary (資源字典):
-                    以鍵值對 (Key-Value Pair) 的形式，集中儲存、解析與管理應用程式中可重複使用的 UI 資源 (如畫筆、顏色、字型、樣式和控制項範本)，
-                    字典內的每一個資源(除了隱式樣式)都必須帶有 x:Key 屬性，
-                    定義在特定控制項內的資源字典只能給該控制項使用；定義在 Window 的能給整個視窗使用；定義在 App.xaml 的 Application 的則成為全域資源
-
-                如何新增單獨資源字典檔:
-                    1. 在 Solution Explorer 裡面右鍵點擊專案名稱，選擇 Add -> New Item
-                    2. 選擇 Resource Dictionary (資源字典(R))
-                    ex. Src/Example/Dictionary
-
-                如何在 xaml 中引用資源字典檔:
-                    1. 在 Resources 裡面定義 ResourceDictionary
-                    2. 於 ResourceDictionary 裡透過 ResourceDictionary.MergedDictionaries 屬性來合併資源字典
-                    3. 每個資源字典透過 ResourceDictionary 的 Source 來指定資源字典的 Uri
-            -->
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <!--Pack URI 格式-->
-                    <ResourceDictionary Source="pack://application:,,,/Dictionary/LabelStyle.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/Dictionary/SmallLabelStyle.xaml" />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
+            <!--BigLabelStyleDynamic 的基底為 App.xaml 的 BigLabelStyleBase-->
+            <Style x:Key="BigLabelStyleDynamic" TargetType="Label" BasedOn="{StaticResource BigLabelStyleBase}">
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Hello World" Style="{StaticResource LabelStyleBlue}" />
-        <Label Grid.Row="1" Content="Hello World" Style="{StaticResource SmallLabelStyleRed}" />
+        <!--Row0 的 Label.Style 靜態引用此視窗-Grid.Resources 中定義的資源-->
+        <Label Grid.Row="0" Content="This style come from Grid(S)" Style="{StaticResource BigLabelStyleDynamic}" />
+        <!--Row1 的 Label.Style 動態引用此視窗-Grid.Resources 中定義的資源-->
+        <Label Grid.Row="1" Content="This style come from Grid(D)" Style="{DynamicResource BigLabelStyleDynamic}" />
+        <!--Row2 的 Label.Style 靜態引用 App.xaml-Application.Resources 中定義的資源-->
+        <Label Grid.Row="2" Content="This style come from App" Style="{StaticResource BigLabelStyleRed}" />
     </Grid>
 </Window>

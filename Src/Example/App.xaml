@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Example"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Pack URI 格式-->
+                <ResourceDictionary Source="pack://application:,,,/Dictionary/BigLabelStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
