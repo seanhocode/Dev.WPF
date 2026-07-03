@@ -14,5 +14,6 @@
         <Button Content="XAMLExample" FontSize="36" Click="OpenXAMLExampleWindow" />
         <Button Content="ResorceExample" FontSize="36" Click="OpenResourceExampleWindow" />
         <Button Content="AttachedPropertyExample" FontSize="36" Click="OpenAttachedPropertyExampleWindow" />
+        <Button Content="MarkupExtensionsExample" FontSize="36" Click="OpenMarkupExtensionsExampleWindow" />
     </StackPanel>
 </Window>

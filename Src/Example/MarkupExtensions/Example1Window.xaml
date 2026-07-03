@@ -1,0 +1,25 @@
+﻿<Window x:Class="Example.MarkupExtensions.Example1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.MarkupExtensions"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Example1Window" Height="450" Width="800">
+    <Grid>
+        <!--
+            MarkupExtensions:
+                在 XAML 中大括號 {} 包起來的語法，用於在 XAML 中提供動態值或引用。
+                    ex. 使用 {x:Static} 可以引用靜態屬性或常數，使用 {Binding} 可以綁定資料來源
+
+                在 XAML 中控件需要將屬性設定為更複雜的東西時使用，例如：
+                    指向另一個檔案裡的資源
+                    綁定到 C# 變數裡的一筆資料
+                    呼叫系統內建的靜態常數
+
+                作用為告訴 XAML 解析器，這個屬性值不是單純的字串，而需執行對應的底層機制，計算出值後再將結果傳給屬性。
+        -->
+        <Label Content="{x:Static system:DateTime.Now}" Style="{StaticResource BigLabelStyleBlue}" />
+    </Grid>
+</Window>

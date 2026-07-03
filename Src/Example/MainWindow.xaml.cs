@@ -44,4 +44,10 @@ public partial class MainWindow : Window
         var attachedPropertyExampleMainWindow = new AttachedProperty.MainWindow();
         attachedPropertyExampleMainWindow.Show();
     }
+
+    public void OpenMarkupExtensionsExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var markupExtensionsExampleMainWindow = new MarkupExtensions.MainWindow();
+        markupExtensionsExampleMainWindow.Show();
+    }
 }
