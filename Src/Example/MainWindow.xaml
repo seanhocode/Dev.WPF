@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example"
         mc:Ignorable="d"
-        Title="Dev.WPF.Example" Height="450" Width="800">
-    <StackPanel>
-        <Label Content="Hello, World!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />
-        <Button Content="LayoutExample" FontSize="36" Click="OpenLayoutExampleWindow" />
-        <Button Content="StyleExample" FontSize="36" Click="OpenStyleExampleWindow" />
-        <Button Content="TemplateExample" FontSize="36" Click="OpenTemplateExampleWindow" />
-        <Button Content="XAMLExample" FontSize="36" Click="OpenXAMLExampleWindow" />
-        <Button Content="ResorceExample" FontSize="36" Click="OpenResourceExampleWindow" />
-        <Button Content="AttachedPropertyExample" FontSize="36" Click="OpenAttachedPropertyExampleWindow" />
-        <Button Content="MarkupExtensionsExample" FontSize="36" Click="OpenMarkupExtensionsExampleWindow" />
-    </StackPanel>
+        Title="Dev.WPF.Example" Height="450" Width="816">
+    <WrapPanel>
+        <!--<Label Content="Hello, World!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />-->
+        <Button Content="LayoutExample" FontSize="36" Width="400" Click="OpenLayoutExampleWindow" />
+        <Button Content="StyleExample" FontSize="36" Width="400" Click="OpenStyleExampleWindow" />
+        <Button Content="TemplateExample" FontSize="36" Width="400" Click="OpenTemplateExampleWindow" />
+        <Button Content="XAMLExample" FontSize="36" Width="400" Click="OpenXAMLExampleWindow" />
+        <Button Content="ResorceExample" FontSize="36" Width="800" Click="OpenResourceExampleWindow" />
+        <Button Content="AttachedPropertyExample" FontSize="36" Width="800" Click="OpenAttachedPropertyExampleWindow" />
+        <Button Content="MarkupExtensionsExample" FontSize="36" Width="800" Click="OpenMarkupExtensionsExampleWindow" />
+        <Button Content="DataBindingExample" FontSize="36" Width="800" Click="OpenDataBindingExampleWindow" />
+    </WrapPanel>
 </Window>

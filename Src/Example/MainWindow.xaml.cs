@@ -50,4 +50,10 @@ public partial class MainWindow : Window
         var markupExtensionsExampleMainWindow = new MarkupExtensions.MainWindow();
         markupExtensionsExampleMainWindow.Show();
     }
+
+    public void OpenDataBindingExampleWindow(object sender, RoutedEventArgs e)
+    {
+        var dataBindingExampleMainWindow = new DataBinding.MainWindow();
+        dataBindingExampleMainWindow.Show();
+    }
 }
