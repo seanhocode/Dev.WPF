@@ -14,5 +14,11 @@ namespace Example.MarkupExtensions
             Example1Window example1Window = new Example1Window();
             example1Window.Show();
         }
+
+        public void OpenExample2Window(object sender, RoutedEventArgs e)
+        {
+            Example2Window example2Window = new Example2Window();
+            example2Window.Show();
+        }
     }
 }
