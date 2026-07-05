@@ -1,0 +1,25 @@
+﻿<Window x:Class="Example.DataBinding.DataContexts.Example2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.DataBinding.DataContexts"
+        mc:Ignorable="d"
+        Title="Example2Window" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--
+            TextBox.Text 屬性的預設資料更新觸發時機 (UpdateSourceTrigger) 是 LostFocus (失去焦點)，
+            也就是說，當 TextBox 失去焦點時，才會將 TextBox 的文字更新到 DataContext，
+        -->
+        <TextBox Grid.Row="0" Text="{Binding FirstTextValue}" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Width="750" />
+        <!--
+            Window、Grid、StackPanel 等用來排版的容器，預設 Focusable="False"，
+            因此定義一個 Button (預設 Focusable="True")，避免畫面上沒有任何控制項可以取得焦點，導致 TextBox 無法失去焦點，無法觸發資料更新。
+        -->
+        <Button Grid.Row="1" Content="Enter" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" />
+    </Grid>
+</Window>

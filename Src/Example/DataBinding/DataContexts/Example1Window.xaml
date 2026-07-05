@@ -1,0 +1,30 @@
+﻿<Window x:Class="Example.DataBinding.DataContexts.Example1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.DataBinding.DataContexts"
+        mc:Ignorable="d"
+        Title="Example1Window" Height="450" Width="800">
+    <!-- 
+        1. 宣告與指派資料來源:
+            將定義好的 FirstDataContext 實體化，並指派給 Window 的 DataContext (資料環境) 屬性，
+            DataContext 具有向下繼承的特性，只要在最外層的 Window 設定好，
+            其內部所有的子控制項 (例如下方的 StackPanel 與 Slider) 預設皆會把 FirstDataContext 當作 DataContext。
+    
+        P.S.這裡使用 XAML 的方式宣告 DataContext，C# 中無須再額外宣告 DataContext (因為 XAML 會自動在背後產生對應的 C# 程式碼)，
+            若想要使用 C# 的方式宣告 DataContext，請參考 Example2Window.xaml。
+    -->
+    <Window.DataContext>
+        <local:FirstDataContext />
+    </Window.DataContext>
+    <StackPanel>
+        <!-- 
+            2. 設定綁定目標:
+                在 XAML 中的控制項 (Control，例如這裡的 Slider) 被稱為綁定目標 (Binding Target)，
+                透過 {Binding FirstDataContextValue} 語法，Slider 會去目前的 DataContext 中，
+                尋找名稱一模一樣為 "FirstDataContextValue" 的屬性，並將兩者的數值連結起來。
+        -->
+        <Slider Value="{Binding FirstDataContextValue}" />
+    </StackPanel>
+</Window>

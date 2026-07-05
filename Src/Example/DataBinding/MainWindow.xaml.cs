@@ -8,5 +8,11 @@ namespace Example.DataBinding
         {
             InitializeComponent();
         }
+
+        public void OpenDataContextsMainWindow(object sender, RoutedEventArgs e)
+        {
+            DataContexts.MainWindow dataContextsMainWindow = new DataContexts.MainWindow();
+            dataContextsMainWindow.Show();
+        }
     }
 }
