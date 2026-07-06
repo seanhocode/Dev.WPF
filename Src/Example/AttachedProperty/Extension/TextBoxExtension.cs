@@ -1,7 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Example.AttachedProperty.Extension
+// 未放入 .Core 是因為附加屬性是 WPF 的一部分，故放在 Example.AttachedProperty 目錄下
+namespace Example.WPF.AttachedProperty.Extension
 {
     /*
      * 因附加屬性是要附加到其他控件上的，所以要額外定義一個類別來裝載附加屬性

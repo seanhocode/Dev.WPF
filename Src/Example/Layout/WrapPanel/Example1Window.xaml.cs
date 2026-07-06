@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Layout.WrapPanel
+namespace Example.WPF.Layout.WrapPanel
 {
     public partial class Example1Window : Window
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Style
+namespace Example.WPF.Style
 {
     public partial class Example1Window : Window
     {

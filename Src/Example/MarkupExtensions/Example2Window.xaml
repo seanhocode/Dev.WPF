@@ -1,10 +1,10 @@
-﻿<Window x:Class="Example.MarkupExtensions.Example2Window"
+﻿<Window x:Class="Example.WPF.MarkupExtensions.Example2Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Example.MarkupExtensions"
-        xmlns:extension="clr-namespace:Example.MarkupExtensions.Extension"
+        xmlns:local="clr-namespace:Example.WPF.MarkupExtensions"
+        xmlns:extension="clr-namespace:Example.WPF.MarkupExtensions.Extension"
         mc:Ignorable="d"
         Title="Example2Window" Height="450" Width="800">
     <Grid>

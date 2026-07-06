@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.DataBinding
+namespace Example.WPF.DataBinding
 {
     public partial class MainWindow : Window
     {

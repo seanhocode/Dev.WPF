@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Template
+namespace Example.WPF.Template
 {
     public partial class Example2Window : Window
     {

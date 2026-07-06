@@ -19,13 +19,13 @@
         編譯並執行這支程式時，忽略所有以 [Namespace]: 開頭的屬性
             P.S. d: 的屬性只會在 Visual Studio 的設計預覽畫面上生效，通常是用來做 UI 設計時的輔助工具，需忽略 d: 避免被這些假資料干擾或因找不到 :d 導致程式崩潰
 -->
-<Window x:Class="Example.XAML.Example1Window"
+<Window x:Class="Example.WPF.XAML.Example1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Example.XAML"
-        xmlns:model="clr-namespace:Example.Core.Model.XAML;assembly=Example.Core"
+        xmlns:local="clr-namespace:Example.WPF.XAML"
+        xmlns:model="clr-namespace:Example.WPF.Core.Model.XAML;assembly=Example.WPF.Core"
         mc:Ignorable="d"
         Title="{x:Static model:Example1Definition.Title}" Height="450" Width="800">
     <Grid>

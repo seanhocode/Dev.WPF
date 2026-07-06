@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Layout.StackPanel
+namespace Example.WPF.Layout.StackPanel
 {
     public partial class MainWindow : Window
     {

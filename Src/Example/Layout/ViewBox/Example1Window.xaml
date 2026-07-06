@@ -1,9 +1,9 @@
-﻿<Window x:Class="Example.Layout.ViewBox.Example1Window"
+﻿<Window x:Class="Example.WPF.Layout.ViewBox.Example1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Example.Layout.ViewBox"
+        xmlns:local="clr-namespace:Example.WPF.Layout.ViewBox"
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
     <!--
@@ -14,6 +14,7 @@
     <Viewbox>
         <!--需注意，在將 Canvas 放入 ViewBox 時需要設定 Canvas 的大小，因 ViewBox 內控件的預設大小是 0-->
         <Canvas Height="430" Width="800">
+            <Label Content="拖曳調整視窗大小，可觀察視窗內控制項大小隨視窗大小變化而變化" Canvas.Left="0" Canvas.Top="0" FontSize="24" />
             <Button Content="Left:50, Top:50" Canvas.Left="50" Canvas.Top="50" />
             <Button Content="Left:200, Top:100" Canvas.Left="200" Canvas.Top="100" />
             <Button Content="Left:100, Top:200" Canvas.Left="100" Canvas.Top="200" />

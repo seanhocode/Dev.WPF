@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Example.Resource
+namespace Example.WPF.Resource
 {
     public partial class Example1Window : Window
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.MarkupExtensions
+namespace Example.WPF.MarkupExtensions
 {
     public partial class Example1Window : Window
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.AttachedProperty
+namespace Example.WPF.AttachedProperty
 {
     public partial class MainWindow : Window
     {

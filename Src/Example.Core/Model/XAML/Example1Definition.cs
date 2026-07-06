@@ -1,4 +1,4 @@
-﻿namespace Example.Core.Model.XAML
+﻿namespace Example.WPF.Core.Model.XAML
 {
     public class Example1Definition
     {

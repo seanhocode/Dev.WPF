@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Example.Layout.Frame
+namespace Example.WPF.Layout.Frame
 {
     public partial class Example1Page1 : Page
     {

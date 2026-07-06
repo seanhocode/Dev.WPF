@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Layout.DockPanel
+namespace Example.WPF.Layout.DockPanel
 {
     public partial class MainWindow : Window
     {

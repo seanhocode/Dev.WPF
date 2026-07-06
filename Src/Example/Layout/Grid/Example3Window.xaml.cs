@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Layout.Grid
+namespace Example.WPF.Layout.Grid
 {
     public partial class Example3Window : Window
     {

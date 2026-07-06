@@ -1,5 +1,4 @@
-﻿
-namespace Example.DataBinding.DataContexts
+﻿namespace Example.WPF.Core.DataBinding.DataContexts
 {
     /// <summary>
     /// 資料綁定範例，此類別扮演資料環境 (DataContext) 的角色
@@ -43,10 +42,10 @@ namespace Example.DataBinding.DataContexts
         public string? FirstTextValue
         {
             get { return _FirstTextValue; }
-            set 
+            set
             {
                 //在這裡下中斷點可觀察 Example2 中的 TextBox 的值改變且按下 Enter 時，Binding Source 的值也會跟著改變。
-                _FirstTextValue = value; 
+                _FirstTextValue = value;
             }
         }
     }

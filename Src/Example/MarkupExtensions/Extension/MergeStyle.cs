@@ -1,7 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Markup;
 
-namespace Example.MarkupExtensions.Extension
+//未放入 .Core 是因為 MarkupExtension 是 WPF 的一部分，故放在 Example.MarkupExtensions 目錄下
+namespace Example.WPF.MarkupExtensions.Extension
 {
     /*
      * MarkupExtensionReturnType: 

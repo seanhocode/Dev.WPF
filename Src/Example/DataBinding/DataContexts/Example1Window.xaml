@@ -1,9 +1,10 @@
-﻿<Window x:Class="Example.DataBinding.DataContexts.Example1Window"
+﻿<Window x:Class="Example.WPF.DataBinding.DataContexts.Example1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Example.DataBinding.DataContexts"
+        xmlns:local="clr-namespace:Example.WPF.DataBinding.DataContexts"
+        xmlns:dataContexts="clr-namespace:Example.WPF.Core.DataBinding.DataContexts;assembly=Example.WPF.Core"
         mc:Ignorable="d"
         Title="Example1Window" Height="450" Width="800">
     <!-- 
@@ -16,7 +17,7 @@
             若想要使用 C# 的方式宣告 DataContext，請參考 Example2Window.xaml。
     -->
     <Window.DataContext>
-        <local:FirstDataContext />
+        <dataContexts:FirstDataContext />
     </Window.DataContext>
     <StackPanel>
         <!-- 

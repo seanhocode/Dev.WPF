@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example.Layout
+namespace Example.WPF.Layout
 {
     public partial class MainWindow : Window
     {
