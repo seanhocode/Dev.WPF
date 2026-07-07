@@ -10,7 +10,7 @@ namespace Example.WPF.DataBinding.DataContexts
             InitializeComponent();
 
             FirstDataContext firstDataContext = new FirstDataContext();
-            firstDataContext.FirstTextValue = "HelloWorld";
+            firstDataContext.FirstDataContextTextValue = "HelloWorld";
 
             // 於 C# 中定義 DataContext，並將其設置為 firstDataContext 實例
             this.DataContext = firstDataContext;

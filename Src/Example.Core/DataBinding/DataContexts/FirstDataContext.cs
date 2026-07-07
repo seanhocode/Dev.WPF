@@ -38,14 +38,14 @@
             }
         }
 
-        private string? _FirstTextValue;
-        public string? FirstTextValue
+        private string? _FirstDataContextTextValue;
+        public string? FirstDataContextTextValue
         {
-            get { return _FirstTextValue; }
+            get { return _FirstDataContextTextValue; }
             set
             {
                 //在這裡下中斷點可觀察 Example2 中的 TextBox 的值改變且按下 Enter 時，Binding Source 的值也會跟著改變。
-                _FirstTextValue = value;
+                _FirstDataContextTextValue = value;
             }
         }
     }
