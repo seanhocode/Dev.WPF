@@ -10,28 +10,45 @@ namespace Example.WPF.AttachedProperty.Extension
      *      防止誤用： 確保其他人不會不小心 new TextBoxExtension() 實例化它
      *      語意更明確： 明確告訴編譯器和閱讀程式碼的人，這是一個純工具/擴充類別
      */
+    /// <summary>
+    /// TextBox 的附加屬性擴充類別範例，提供附加屬性 IsEnableWatcher、HasText、ChangeCount
+    /// </summary>
     public static class TextBoxExtension
     {
-        /*
-         * 為附加屬性增加開關，避免找不到時機點去掛載 TextChanged 事件，
-         * DependencyProperty 屬性命名規範: 屬性名稱 + Property
-         */
+        /// <summary>
+        /// 附加屬性 IsEnableWatcher，當設定為 true 時，會開始監聽 TextBox 的 TextChanged 事件，並更新 HasText 與 ChangeCount 屬性
+        /// </summary>
+        /// <remarks>
+        /// <para>為附加屬性增加開關，避免找不到時機點去掛載 TextChanged 事件</para>
+        /// <para>DependencyProperty 屬性命名規範: 屬性名稱 + Property</para>
+        /// <para>附加屬性是由 <see cref="DependencyProperty"/> 這個類別中的靜態方法 <see cref="DependencyProperty.RegisterAttached"/> 去註冊的</para>
+        /// </remarks>
         public static readonly DependencyProperty IsEnableWatcherProperty =
-            //附加屬性透過 DependencyProperty.RegisterAttached 方法來註冊
             DependencyProperty.RegisterAttached(
                 "IsEnableWatcher",                                      //附加屬性名稱
                 typeof(bool),                                           //附加屬性類型
                 typeof(TextBoxExtension),                               //附加屬性屬於哪個類別
                 new PropertyMetadata(false, OnIsEnableWatcherChanged)); //附加屬性的其它設定
 
-        /*
-         *  附加屬性取值或賦值:
-         *      透過靜態方法Gett[AttachedProperty], Sett[AttachedProperty]來操作，
-         *      命名規範: Get + 屬性名稱 / Set + 數性名稱，
-         *      Get[AttachedProperty] 上面設定 AttachedPropertyBrowsableForType 可以用來指定甚麼類型的控件才可以使用這個附加屬性
-        */
+        /// <summary>
+        /// 透過靜態方法 GetCustom 來取得附加屬性的值
+        /// </summary>
+        /// <param name="obj">要取得附加屬性的目標物件</param>
+        /// <remarks>
+        /// <para>GetCustom 上面設定 <see cref="AttachedPropertyBrowsableForTypeAttribute"/> 可以用來指定甚麼類型的控件才可以使用這個附加屬性</para>
+        /// <para>GetCustom 命名規範: Get + 屬性名稱</para>
+        /// </remarks>
+        /// <returns>附加屬性的值</returns>
         [AttachedPropertyBrowsableForType(typeof(TextBox))]
         public static bool GetIsEnableWatcher(DependencyObject obj) => (bool)obj.GetValue(IsEnableWatcherProperty);
+        /// <summary>
+        /// 透過靜態方法 SetCustom 來設定附加屬性的值
+        /// </summary>
+        /// <param name="obj">要設定附加屬性的目標物件</param>
+        /// <param name="value">要設定的附加屬性值</param>
+        /// <remarks>
+        /// <para>SetCustom 命名規範: Set + 屬性名稱</para>
+        /// </remarks>
         public static void SetIsEnableWatcher(DependencyObject obj, bool value) => obj.SetValue(IsEnableWatcherProperty, value);
 
 
@@ -45,6 +62,7 @@ namespace Example.WPF.AttachedProperty.Extension
         [AttachedPropertyBrowsableForType(typeof(TextBox))]
         public static bool GetHasText(DependencyObject obj) => (bool)obj.GetValue(HasTextProperty);
         public static void SetHasText(DependencyObject obj, bool value) => obj.SetValue(HasTextProperty, value);
+
 
         public static readonly DependencyProperty ChangeCountProperty =
             DependencyProperty.RegisterAttached(
