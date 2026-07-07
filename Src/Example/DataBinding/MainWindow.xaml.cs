@@ -14,5 +14,11 @@ namespace Example.WPF.DataBinding
             DataContexts.MainWindow dataContextsMainWindow = new DataContexts.MainWindow();
             dataContextsMainWindow.Show();
         }
+
+        public void OpenDependencyPropertyMainWindow(object sender, RoutedEventArgs e)
+        {
+            DependencyProperties.MainWindow dependencyPropertyMainWindow = new DependencyProperties.MainWindow();
+            dependencyPropertyMainWindow.Show();
+        }
     }
 }

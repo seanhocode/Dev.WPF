@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Example.WPF.DataBinding.DependencyProperties.UserControls.ErrorUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Example.WPF.DataBinding.DependencyProperties.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--
+        RelativeSource：
+            用於在 XAML 資料綁定中，允許目標屬性根據其在 UI 視覺樹 (Visual Tree) 中的相對位置來動態指定綁定來源
+        RelativeSource Mode：
+            用於定義 RelativeSource 尋找資料來源的導向策略與模式 (例如：尋找上層上代、綁定自身屬性、或綁定前一個樣式範本)，
+            FindAncestor => 往上層 (祖先) 的方向找
+        AncestorType:
+            當 Mode 設定為 FindAncestor 時，限定尋找的目標類型，用於指定在視覺樹向上追溯的過程中，所要匹配的目標祖先控制項之類別名稱 (Type)，
+            此範例則是從 Grid 開始往上找，不管是遇到 StackPanel、Border 還是其他控制項都直接跳過，直到抓到第一個 UserControl 為止
+    
+        {Binding RelativeSource={RelativeSource...}}
+            外層的 {Binding ...} 是標記延伸 (Markup Extension)，它的本質是實例化一個 Binding 類別
+            中間的 {RelativeSource=...} 是 Binding 類別的屬性
+            內層的 {RelativeSource ...} 是標記延伸 (Markup Extension)，它的本質是實例化一個 RelativeSource 類別
+    
+        如此段綁定 DataContext 要在 C# 中定義：
+            // 1. 先實例化一個 RelativeSource 物件
+            RelativeSource myRelativeSource = new RelativeSource();
+            myRelativeSource.Mode = RelativeSourceMode.FindAncestor;
+            myRelativeSource.AncestorType = typeof(UserControl);
+
+            // 2. 建立 Binding 物件
+            Binding myBinding = new Binding();
+
+            // 3. 將 RelativeSource 物件指派給 Binding 的 RelativeSource 屬性
+            myBinding.RelativeSource = myRelativeSource;
+
+            // 4. 將這個 Binding 實際套用到 Grid 的 DataContext 屬性上
+            MyGrid.SetBinding(FrameworkElement.DataContextProperty, myBinding);
+    -->
+    <Grid x:Name="MyGrid" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}">
+            <TextBlock Text="{Binding ErrorUserControlValue}" />
+    </Grid>
+</UserControl>
