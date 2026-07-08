@@ -15,10 +15,10 @@ namespace Example.WPF.DataBinding.DependencyProperties
             example1Window.Show();
         }
 
-        public void OpenExample2Window(object sender, RoutedEventArgs e)
+        public void OpenErrorExample1Window(object sender, RoutedEventArgs e)
         {
-            Example2Window example2Window = new Example2Window();
-            example2Window.Show();
+            ErrorExample1Window errorExample1Window = new ErrorExample1Window();
+            errorExample1Window.Show();
         }
     }
 }

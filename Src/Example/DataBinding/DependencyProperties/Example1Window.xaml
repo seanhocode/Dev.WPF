@@ -4,14 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF.DataBinding.DependencyProperties"
-        xmlns:dataContext="clr-namespace:Example.WPF.Core.DataBinding.DataContexts;assembly=Example.WPF.Core"
         xmlns:userControls="clr-namespace:Example.WPF.DataBinding.DependencyProperties.UserControls"
+        xmlns:model="clr-namespace:Example.WPF.Core.Model.DataBinding.DependencyProperties;assembly=Example.WPF.Core"
         mc:Ignorable="d"
-        Title="Example1Window" Height="450" Width="800">
-    <Window.DataContext>
-        <dataContext:FirstDataContext />
-    </Window.DataContext>
+        Title="{x:Static model:Example1Definition.Title}" Height="450" Width="800">
+
     <Grid>
-        <userControls:ErrorUserControl ErrorUserControlValue="{Binding FirstDataContextValue}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="{x:Static model:Example1Definition.Description}" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <!--因 FirstUserControl 已註冊相依屬性 (Dependency Property)，因此可以使用 Binding 將資料來源綁定至該相依屬性-->
+        <userControls:FirstUserControl Grid.Row="1" FirstUserControlValue="{Binding FirstDataContextValue}" />
     </Grid>
 </Window>
