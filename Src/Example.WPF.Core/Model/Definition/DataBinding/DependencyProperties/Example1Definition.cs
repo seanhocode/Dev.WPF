@@ -2,8 +2,6 @@
 {
     public class Example1Definition : DependencyPropertyDefinition
     {
-        public static string Title = "Example1Window";
-
         public Example1Definition()
         {
             ExampleDescription = @"

@@ -7,11 +7,11 @@
         mc:Ignorable="d">
     <!--
         Viewbox:
-            一個可以讓子元素自動縮放的容器，
-            Viewbox 的子元素會依照 Viewbox 的大小自動縮放，保持原本的比例，
+            一個可以讓子控制項自動縮放的容器，
+            Viewbox 的子控制項會依照 Viewbox 的大小自動縮放，保持原本的比例
     -->
     <Viewbox>
-        <!--需注意，在將 Canvas 放入 ViewBox 時需要設定 Canvas 的大小，因 ViewBox 內控件的預設大小是 0-->
+        <!--需注意，在將 Canvas 放入 ViewBox 時需要設定 Canvas 的大小，因 ViewBox 內控制項的預設大小是 0-->
         <Canvas Height="430" Width="800">
             <Label Content="拖曳調整視窗大小，可觀察視窗內控制項大小隨視窗大小變化而變化" Canvas.Left="0" Canvas.Top="0" FontSize="24" />
             <Button Content="Left:50, Top:50" Canvas.Left="50" Canvas.Top="50" />

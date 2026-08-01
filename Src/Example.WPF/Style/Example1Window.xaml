@@ -9,7 +9,7 @@
         <WrapPanel.Resources>
             <!--
                 Style:
-                    可自訂設定各控件的樣式，
+                    可自訂設定各控制項的樣式，
                     透過 TargetType 屬性來設定目標的類別，
                     透過 Setter 屬性來設定目標的屬性值，
                     需要把 Style 放入 Resources 中，讓區塊裡的代碼可以共用這個 Style

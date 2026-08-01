@@ -16,7 +16,7 @@ public partial class MainWindow : Window
     }
 
     /// <summary>
-    /// 掃描當前 Assembly 中所有帶有 ExampleAttribute 的 UserControl 類別，並將其組織成樹狀結構以顯示在 TreeView 中。
+    /// 掃描當前 Assembly 中所有帶有 ExampleAttribute 的 UserControl 類別，並將其組織成樹狀結構以顯示在 TreeView 中
     /// </summary>
     private void LoadExamples()
     {

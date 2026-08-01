@@ -7,9 +7,9 @@
         mc:Ignorable="d">
     <!--
         StackPanel:
-            可以將子元素依照指定方向(Orientation)排列的容器，
-            StackPanel 的 Orientation 預設為 Vertical，代表子元素會垂直排列，
-            StackPanel 的子元素會依照加入的順序排列
+            可以將子控制項依照指定方向(Orientation)排列的容器，
+            StackPanel 的 Orientation 預設為 Vertical，代表子控制項會垂直排列，
+            StackPanel 的子控制項會依照加入的順序排列
     -->
     <StackPanel>
         <Button Content="Auto" FontSize="36" />

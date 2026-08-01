@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Example.WPF.Layout.Grid"
         mc:Ignorable="d">
     <Grid>
-        <!--未定義 ColumnDefinition 與 RowDefinition，則定義在 Grid 中的控件會依照宣告順序「由下往上」堆疊-->
+        <!--未定義 ColumnDefinition 與 RowDefinition，則定義在 Grid 中的控制項會依照宣告順序「由下往上」堆疊-->
         <Button Content="Button1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="180" />
         <Button Content="Button2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="168" />
         <Button Content="Button3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="156" />

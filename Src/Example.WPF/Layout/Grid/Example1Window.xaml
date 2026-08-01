@@ -7,7 +7,7 @@
         mc:Ignorable="d">
     <!--
         Grid:
-            一個容器控件，可以用來排列子控件，
+            一個容器控制項，可以用來排列子控制項，
             可以定義多個 ColumnDefinition 與 RowDefinition，形成一個網格，
             當 Grid 大小改變時，Grid 的網格大小會符合定義隨之改變，
             寬度跟高度除了可以用數字表示之外，也可以用 auto 與 * 表示:
@@ -28,7 +28,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <!--控件透過設定 Grid.Row 與 Grid.Column 屬性來指定所在的行與列-->
+        <!--控制項透過設定 Grid.Row 與 Grid.Column 屬性來指定所在的行與列-->
         <Button Grid.Row="0" Grid.Column="0" Content="Row0(*)Col0(*)" />
         <Button Grid.Row="0" Grid.Column="1" Content="Row0(*)Col1(Auto)" />
         <Button Grid.Row="1" Grid.Column="0" Content="Row1(Auto)Col0(*)" />

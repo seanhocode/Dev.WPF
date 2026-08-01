@@ -5,7 +5,7 @@ using System.Windows.Controls;
 
 namespace Example.WPF.DataBinding.INotifyPropertyChanged
 {
-    [Example("DataBinding/INotifyPropertyChanged", "無效設定範例")]
+    [Example("DataBinding/INotifyPropertyChanged", "無效設定範例", DefinitionType = typeof(Example.WPF.Core.Model.Definition.DataBinding.INotifyPropertyChanged.Example1Definition))]
     public partial class Example1Window : UserControl
     {
         public Example1Window()

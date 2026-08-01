@@ -7,18 +7,18 @@
         mc:Ignorable="d">
     <!--
         DockPanel:
-            可以讓子元素依照指定方向 (Dock) 排列的容器，
+            可以讓子控制項依照指定方向 (Dock) 排列的容器，
             如果同時設定了 DockPanel.Dock 屬性，則會依照加入的順序排列，
             如果沒有設定 DockPanel.Dock 屬性，則會使用預設值 Left
     -->
     <DockPanel>
-        <!--Dock 預設設定為 Left，代表子元素會靠左排列-->
+        <!--Dock 預設設定為 Left，代表子控制項會靠左排列-->
         <Button Content="DefaultLeft" />
-        <!--Dock 設定為 Right，代表子元素會靠右排列-->
+        <!--Dock 設定為 Right，代表子控制項會靠右排列-->
         <Button Content="Right" DockPanel.Dock="Right" />
-        <!--Dock 設定為 Top，代表子元素會靠上排列-->
+        <!--Dock 設定為 Top，代表子控制項會靠上排列-->
         <Button Content="Top" DockPanel.Dock="Top" />
-        <!--Dock 設定為 Bottom，代表子元素會靠下排列-->
+        <!--Dock 設定為 Bottom，代表子控制項會靠下排列-->
         <Button Content="Bottom" DockPanel.Dock="Bottom" />
         <Button Content="Auto" />
     </DockPanel>

@@ -7,7 +7,7 @@
         mc:Ignorable="d">
     <!--
         Canvas:
-            可以讓子元素以絕對位置排列的容器，
+            可以讓子控制項以絕對位置排列的容器，
             如果同時設定了 Left 與 Right，則會以 Left 為主，Right 會被忽略，
             如果同時設定了 Top 與 Bottom，則會以 Top 為主，Bottom 會被忽略
     -->

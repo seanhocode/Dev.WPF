@@ -10,7 +10,7 @@
         1. 宣告與指派資料來源:
             將定義好的 FirstDataContext 實體化，並指派給 Window 的 DataContext (資料環境) 屬性，
             DataContext 具有向下繼承的特性，只要在最外層的 Window 設定好，
-            其內部所有的子控制項 (例如下方的 StackPanel 與 Slider) 預設皆會把 FirstDataContext 當作 DataContext。
+            其內部所有的子控制項 (例如下方的 StackPanel 與 Slider) 預設皆會把 FirstDataContext 當作 DataContext
     
         P.S.這裡使用 XAML 的方式宣告 DataContext，C# 中無須再額外宣告 DataContext (因為 XAML 會自動在背後產生對應的 C# 程式碼)，
             若想要使用 C# 的方式宣告 DataContext，請參考 Example2Window.xaml。

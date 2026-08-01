@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <!--因 FirstUserControl 已註冊相依屬性 (Dependency Property)，因此可以使用 Binding 將資料來源綁定至該相依屬性-->
+        <!--因 FirstUserControl 已註冊相依屬性 (Dependency Property): FirstUserControlValue，因此可以使用 Binding 將資料來源綁定至 FirstUserControlValue-->
         <userControls:FirstUserControl Grid.Row="0" FirstUserControlValue="{Binding FirstDataContextValue}" />
     </Grid>
 </UserControl>

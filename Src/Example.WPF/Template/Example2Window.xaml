@@ -7,7 +7,6 @@
         mc:Ignorable="d">
     <Grid>
         <Grid.Resources>
-            <!--將 Template 設定放入 Style 中，這樣就可以統一設定所有 Button 的 Template-->
             <Style TargetType="Button">
                 <Setter Property="Template">
                     <Setter.Value>

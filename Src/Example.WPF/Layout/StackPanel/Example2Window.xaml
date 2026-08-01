@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF.Layout.StackPanel"
         mc:Ignorable="d">
-    <!--Orientation 設定為 Horizontal，代表子元素會水平排列-->
+    <!--Orientation 設定為 Horizontal，代表子控制項會水平排列-->
     <StackPanel Orientation="Horizontal">
         <Button Content="Auto" FontSize="36" />
         <Button Content="200*100" Width="200" Height="100"  FontSize="36" />

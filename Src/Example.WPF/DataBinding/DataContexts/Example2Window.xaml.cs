@@ -4,7 +4,7 @@ using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.DataBinding.DataContexts
 {
-    [Example("DataBinding/DataContexts", "基本範例2")]
+    [Example("DataBinding/DataContexts", "基本範例2", DefinitionType = typeof(Example.WPF.Core.Model.Definition.DataBinding.DataContexts.Example2Definition))]
     public partial class Example2Window : UserControl
     {
         public Example2Window()

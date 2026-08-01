@@ -14,8 +14,8 @@
         <Button Content="CustomButton" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" >
             <!--
                 Template: 
-                    掌控控件的顯示方式，所有的控件都是以預設的範本來顯示，
-                    Template 覆寫控件的範本就可以讓控件按照自訂設計顯示
+                    掌控控制項的顯示方式，所有的控制項都是以預設的範本來顯示，
+                    Template 覆寫控制項的範本就可以讓控制項按照自訂設計顯示
             -->
             <Button.Template>
                 <!--

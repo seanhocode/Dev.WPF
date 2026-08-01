@@ -3,7 +3,7 @@ using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.MarkupExtensions
 {
-    [Example("MarkupExtensions", "MarkupExtensions 基本範例")]
+    [Example("MarkupExtensions", "MarkupExtensions 基本範例", DefinitionType = typeof(Example.WPF.Core.Model.Definition.MarkupExtensions.Example1Definition))]
     public partial class Example1Window : UserControl
     {
         public Example1Window()

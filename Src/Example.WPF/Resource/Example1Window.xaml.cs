@@ -5,7 +5,7 @@ using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.Resource
 {
-    [Example("Resource", "Resource 基本範例")]
+    [Example("Resource", "Resource 基本範例", DefinitionType = typeof(Example.WPF.Core.Model.Definition.Resource.Example1Definition))]
     public partial class Example1Window : UserControl
     {
         public Example1Window()
@@ -59,8 +59,8 @@ namespace Example.WPF.Resource
                 );
 
                 /* 4. 將 <Grid.Resources> 裡面的 Style 替換掉
-                 * 用 DynamicResource 引用 BigLabelStyleDynamic 的控件會偵測到 Resources 換了，自動更新 UI。
-                 * 用 StaticResource 引用 BigLabelStyleDynamic 的控件並不會更新
+                 * 用 DynamicResource 引用 BigLabelStyleDynamic 的控制項會偵測到 Resources 換了，自動更新 UI。
+                 * 用 StaticResource 引用 BigLabelStyleDynamic 的控制項並不會更新
                  */
                 MainGrid.Resources["BigLabelStyleDynamic"] = newDynamicStyle;
 
