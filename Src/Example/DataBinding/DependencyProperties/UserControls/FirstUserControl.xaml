@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Example.WPF.DataBinding.DependencyProperties.UserControls"
+             xmlns:model="clr-namespace:Example.WPF.Core.Model.DataBinding.DependencyProperties;assembly=Example.WPF.Core"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="MyGrid" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}">
-        <TextBlock FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FirstUserControlValue}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static model:FirstUserControlDefinition.Description}"></Label>
+        <TextBlock Grid.Row="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding FirstUserControlValue}" />
     </Grid>
 </UserControl>

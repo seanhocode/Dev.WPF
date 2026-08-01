@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF.DataBinding.DependencyProperties"
         mc:Ignorable="d"
-        Title="Dependency Property Example" Height="450" Width="800">
+        Title="DependencyPropertyExample" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
