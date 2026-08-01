@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Example.WPF.Infrastructure\Example.WPF.Infrastructure.csproj" />
     <ProjectReference Include="..\Example.WPF.Core\Example.WPF.Core.csproj" />
   </ItemGroup>
 

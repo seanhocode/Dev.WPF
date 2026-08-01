@@ -4,7 +4,8 @@
     /// 資料綁定範例，此類別扮演資料環境 (DataContext) 的角色
     /// </summary>
     /// <remarks>
-    /// C# 程式碼中綁定的類別被稱作資料環境 (DataContext)，也可以當作是資料綁定的來源 (Binding Source)
+    /// <para>C# 程式碼中綁定的類別被稱作資料環境 (DataContext)，也可以當作是資料綁定的來源 (Binding Source)</para>
+    /// <para>於開發環境中下中斷點觀察</para>
     /// </remarks>
     public class FirstDataContext
     {

@@ -19,7 +19,7 @@ namespace Example.WPF.DataBinding.DependencyProperties.UserControls
         /// </summary>
         /// <remarks>
         /// <para>1. 相依屬性並不存在於 <see cref="FirstUserControl"/> 類裡面，而是由 <see cref="DependencyProperty"/> 這個類別中的靜態方法 <see cref="DependencyProperty.Register"/> 去註冊進 <see cref="DependencyProperty"/></para>
-        /// <para>2. WPF 中所有的控件中的相依屬性全部都交由 <see cref="DependencyProperty"/> 統一管理</para>
+        /// <para>2. WPF 中所有的控制項中的相依屬性全部都交由 <see cref="DependencyProperty"/> 統一管理</para>
         /// <para>3. Register 方法註冊完後，會回傳一個 <see cref="DependencyProperty"/> 類別的物件(<see cref="FirstUserControlValueProperty"/>)，相依屬性一旦註冊完後就不應該被修改，因此使用 readonly 來修飾</para>
         /// <para>4. 相依屬性命名規範: 屬性名稱 + "Property"</para>
         /// <para>5. 註冊完後才可於 XAML 中使用 Binding 將資料來源綁定至該相依屬性</para>

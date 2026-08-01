@@ -4,17 +4,46 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF"
+        xmlns:infra="clr-namespace:Example.WPF.Infrastructure.Example;assembly=Example.WPF.Infrastructure"
+        xmlns:core="clr-namespace:Example.WPF.Core.Model.Definition;assembly=Example.WPF.Core"
         mc:Ignorable="d"
-        Title="Example.WPF" Height="450" Width="816">
-    <WrapPanel>
-        <!--<Label Content="Hello, World!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />-->
-        <Button Content="LayoutExample" FontSize="36" Width="400" Click="OpenLayoutExampleWindow" />
-        <Button Content="StyleExample" FontSize="36" Width="400" Click="OpenStyleExampleWindow" />
-        <Button Content="TemplateExample" FontSize="36" Width="400" Click="OpenTemplateExampleWindow" />
-        <Button Content="XAMLExample" FontSize="36" Width="400" Click="OpenXAMLExampleWindow" />
-        <Button Content="ResorceExample" FontSize="36" Width="800" Click="OpenResourceExampleWindow" />
-        <Button Content="AttachedPropertyExample" FontSize="36" Width="800" Click="OpenAttachedPropertyExampleWindow" />
-        <Button Content="MarkupExtensionsExample" FontSize="36" Width="800" Click="OpenMarkupExtensionsExampleWindow" />
-        <Button Content="DataBindingExample" FontSize="36" Width="800" Click="OpenDataBindingExampleWindow" />
-    </WrapPanel>
+        Title="Example.WPF" Height="1080" Width="1920"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- Definition 共同的介面或基底類別，或是針對特定類別寫 Template -->
+        <DataTemplate DataType="{x:Type core:MainWindowDefinition}">
+            <StackPanel>
+                <!-- 綁定 Definition 內的具體屬性 -->
+                <TextBlock Text="定義：" FontWeight="Bold" FontSize="36"/>
+                <TextBlock Text="{Binding ExampleDefinition}" TextWrapping="Wrap" FontSize="20"/>
+
+                <TextBlock Text="範例說明：" FontWeight="Bold" FontSize="36"/>
+                <TextBlock Text="{Binding ExampleDescription}" TextWrapping="Wrap" FontSize="20"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TreeView Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Name="ExampleTreeView" SelectedItemChanged="ExampleTreeView_SelectedItemChanged">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type infra:ExampleNode}" ItemsSource="{Binding SubNodes}">
+                    <TextBlock Text="{Binding Title}" Margin="0,2"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
+        <!-- 範例顯示區域(上半部) -->
+        <ContentControl Grid.Row="0" Grid.Column="1" Name="ExampleContent" Margin="10" />
+
+        <!-- 定義顯示區域(下半部) -->
+        <ContentControl Grid.Row="1" Grid.Column="1" Name="DefinitionContent" Margin="10" />
+    </Grid>
 </Window>
