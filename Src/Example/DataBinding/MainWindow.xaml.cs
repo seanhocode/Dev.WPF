@@ -20,5 +20,11 @@ namespace Example.WPF.DataBinding
             DependencyProperties.MainWindow dependencyPropertyMainWindow = new DependencyProperties.MainWindow();
             dependencyPropertyMainWindow.Show();
         }
+
+        public void OpenINotifyPropertyChangedMainWindow(object sender, RoutedEventArgs e)
+        {
+            INotifyPropertyChanged.MainWindow inotifyPropertyChangedMainWindow = new INotifyPropertyChanged.MainWindow();
+            inotifyPropertyChangedMainWindow.Show();
+        }
     }
 }
