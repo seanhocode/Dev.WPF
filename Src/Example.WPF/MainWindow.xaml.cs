@@ -35,17 +35,21 @@ public partial class MainWindow : Window
             if (attr != null)
             {
                 string[] categories = attr.Category.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+                // 從根節點開始，逐層建立或尋找對應的分類目錄節點，因為此處是傳參考，所以更新 currentLevel = 更新 rootNodes
                 ObservableCollection<ExampleNode> currentLevel = rootNodes;
 
                 // 建構或尋找對應的分類目錄節點
                 foreach (String cat in categories)
                 {
+                    // 尋找當前層級中是否已存在該分類節點
                     ExampleNode? node = currentLevel.FirstOrDefault(n => n.Title == cat && !n.IsExample);
+                    // 若不存在，則建立新的分類節點
                     if (node == null)
                     {
                         node = new ExampleNode { Title = cat };
                         currentLevel.Add(node);
                     }
+                    // 進入下一層級
                     currentLevel = node.SubNodes;
                 }
 
@@ -69,30 +73,54 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void ExampleTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
     {
-        if (e.NewValue is ExampleNode selectedNode && selectedNode.IsExample)
+        if (e.NewValue is ExampleNode selectedNode)
         {
-            try
+            if (selectedNode.IsExample)
             {
-                // 實例化上半部的 UI 範例
-                UserControl? exampleControl = (UserControl?)Activator.CreateInstance(selectedNode.TargetType);
-                ExampleContent.Content = exampleControl;
+                try
+                {
+                    UserControl? exampleControl;
+                    // 實例化上半部的 UI 範例
+                    if (selectedNode.TargetType != null)
+                    {
+                        exampleControl = (UserControl?)Activator.CreateInstance(selectedNode.TargetType);
+                        ExampleContent.Content = exampleControl;
+                    }
 
-                // 實例化下半部的 定義 (Definition)
-                if (selectedNode.DefinitionType != null)
-                {
-                    var definitionInstance = Activator.CreateInstance(selectedNode.DefinitionType);
-                    DefinitionContent.Content = definitionInstance;
+                    // 實例化下半部的 定義 (Definition)
+                    if (selectedNode.DefinitionType != null)
+                    {
+                        Object? definitionInstance = Activator.CreateInstance(selectedNode.DefinitionType);
+                        DefinitionContent.Content = definitionInstance;
+                    }
+                    else
+                    {
+                        // 若未指定 Definition，給予預設提示或清空
+                        DefinitionContent.Content = "此範例未提供相關定義";
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    // 若未指定 Definition，給予預設提示或清空
-                    DefinitionContent.Content = "此範例未提供相關定義。";
+                    MessageBox.Show($"載入範例失敗: {ex.Message}");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"載入範例失敗: {ex.Message}");
+                // 若選取的節點不是範例，清空內容
+                ExampleContent.Content = null;
+                Label label = new Label();
+                label.FontSize = 36;
+                label.Content = $"{selectedNode.Title} 範例";
+                label.HorizontalAlignment = HorizontalAlignment.Center;
+                label.VerticalAlignment = VerticalAlignment.Center;
+                DefinitionContent.Content = label;
             }
+        }
+        else
+        {
+            // 若選取的不是節點，清空內容
+            ExampleContent.Content = null;
+            DefinitionContent.Content = "請選擇範例";
         }
     }
 }
