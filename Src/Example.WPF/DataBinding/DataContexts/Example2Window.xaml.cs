@@ -1,9 +1,11 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
 using Example.WPF.Core.Model.DataBinding.DataContexts;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.DataBinding.DataContexts
 {
-    public partial class Example2Window : Window
+    [Example("DataBinding/DataContexts", "基本範例2")]
+    public partial class Example2Window : UserControl
     {
         public Example2Window()
         {

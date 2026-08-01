@@ -1,11 +1,10 @@
-﻿<Window x:Class="Example.WPF.Layout.Grid.Example1Window"
+﻿<UserControl x:Class="Example.WPF.Layout.Grid.Example1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF.Layout.Grid"
-        mc:Ignorable="d"
-        Title="Example1Window" Height="450" Width="800">
+        mc:Ignorable="d">
     <!--
         Grid:
             一個容器控件，可以用來排列子控件，
@@ -35,4 +34,4 @@
         <Button Grid.Row="1" Grid.Column="0" Content="Row1(Auto)Col0(*)" />
         <Button Grid.Row="1" Grid.Column="1" Content="Row1(Auto)Col1(Auto)" />
     </Grid>
-</Window>
+</UserControl>

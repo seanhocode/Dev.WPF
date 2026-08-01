@@ -1,10 +1,12 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Media;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.Resource
 {
-    public partial class Example1Window : Window
+    [Example("Resource", "Resource 基本範例")]
+    public partial class Example1Window : UserControl
     {
         public Example1Window()
         {

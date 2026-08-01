@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.XAML
 {
-    public partial class Example1Window : Window
+    [Example("XAML", "XAML 基本範例")]
+    public partial class Example1Window : UserControl
     {
         public Example1Window()
         {

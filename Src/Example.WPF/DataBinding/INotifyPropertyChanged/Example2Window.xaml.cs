@@ -1,9 +1,12 @@
 ﻿using Example.WPF.Core.Model.DataBinding.DataContexts;
 using System.Windows;
+using System.Windows.Controls;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.DataBinding.INotifyPropertyChanged
 {
-    public partial class Example2Window : Window
+    [Example("DataBinding/INotifyPropertyChanged", "基本範例")]
+    public partial class Example2Window : UserControl
     {
         public Example2Window()
         {

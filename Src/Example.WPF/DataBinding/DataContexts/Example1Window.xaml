@@ -1,12 +1,11 @@
-﻿<Window x:Class="Example.WPF.DataBinding.DataContexts.Example1Window"
+﻿<UserControl x:Class="Example.WPF.DataBinding.DataContexts.Example1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF.DataBinding.DataContexts"
         xmlns:dataContexts="clr-namespace:Example.WPF.Core.Model.DataBinding.DataContexts;assembly=Example.WPF.Core"
-        mc:Ignorable="d"
-        Title="Example1Window" Height="450" Width="800">
+        mc:Ignorable="d">
     <!-- 
         1. 宣告與指派資料來源:
             將定義好的 FirstDataContext 實體化，並指派給 Window 的 DataContext (資料環境) 屬性，
@@ -16,9 +15,9 @@
         P.S.這裡使用 XAML 的方式宣告 DataContext，C# 中無須再額外宣告 DataContext (因為 XAML 會自動在背後產生對應的 C# 程式碼)，
             若想要使用 C# 的方式宣告 DataContext，請參考 Example2Window.xaml。
     -->
-    <Window.DataContext>
+    <UserControl.DataContext>
         <dataContexts:FirstDataContext />
-    </Window.DataContext>
+    </UserControl.DataContext>
     <StackPanel>
         <!-- 
             2. 設定綁定目標:
@@ -28,4 +27,4 @@
         -->
         <Slider Value="{Binding FirstDataContextValue}" />
     </StackPanel>
-</Window>
+</UserControl>

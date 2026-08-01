@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.Style
 {
-    public partial class Example3Window : Window
+    [Example("Style", "Style 基本範例 3")]
+    public partial class Example3Window : UserControl
     {
         public Example3Window()
         {

@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.AttachedProperty
 {
-    public partial class Example1Window : Window
+    [Example("AttachedProperty", "AttachedProperty 基本範例")]
+    public partial class Example1Window : UserControl
     {
         public Example1Window()
         {

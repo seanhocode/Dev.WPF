@@ -1,8 +1,11 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
+using System.Windows;
+using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.Layout.Frame
 {
-    public partial class Example1Window : Window
+    [Example("Layout/Frame", "Frame 基本範例")]
+    public partial class Example1Window : UserControl
     {
         public Example1Window()
         {
