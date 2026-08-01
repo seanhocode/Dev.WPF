@@ -1,0 +1,33 @@
+<UserControl x:Class="Example.WPF.Style.Example1Content"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.WPF.Style"
+        mc:Ignorable="d">
+    <WrapPanel>
+        <WrapPanel.Resources>
+            <!--
+                Style:
+                    可自訂設定各控制項的樣式，
+                    透過 TargetType 屬性來設定目標的類別，
+                    透過 Setter 屬性來設定目標的屬性值，
+                    需要把 Style 放入 Resources 中，讓區塊裡的代碼可以共用這個 Style
+                    P.S. Style 本身是唯讀的(一旦套用就無法修改內部 Setter)
+            -->
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="LightBlue" />
+                <Setter Property="Foreground" Value="DarkBlue" />
+                <!--Setter 除了在簡單屬性設定外，也可以用 Setter.Value 來設定複雜屬性，Template.Example2 有更詳細範例-->
+                <Setter Property="FontSize">
+                    <Setter.Value>36</Setter.Value>
+                </Setter>
+                <Setter Property="Margin" Value="50" />
+                <Setter Property="Padding" Value="10,10" />
+            </Style>
+        </WrapPanel.Resources>
+        <Button Content="Button1" />
+        <Button Content="Button2" />
+        <Button Content="Button3" />
+    </WrapPanel>
+</UserControl>

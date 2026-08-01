@@ -1,0 +1,46 @@
+<UserControl x:Class="Example.WPF.Resource.Example1Content"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example.WPF.Resource"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded">
+    <Grid x:Name="MainGrid">
+        <!--
+            Resources:
+                WPF 裡面所有控制項都有 Resources 屬性，
+                用來集中存放、管理並重複使用各種資源或物件，
+                透過它，可以將顏色、樣式 (Styles)、控制項範本 (Templates)、動畫或資料物件定義在一個集中的地方，
+                並在應用程式的不同區域多次引用它們。
+
+            Resources的作用範圍:
+                僅止於控制項內部而已，在其他視窗中無法使用此視窗的 Resources。
+                    ex. <Window.Resources> 只能在定義的 Window 內部使用
+                    ex. <Grid.Resources> 只能在定義的 Grid 內部使用
+                如果想要讓某個資源被整個程式共享，那可以將資源放入 App.xaml 中的 <Application.Resources> 區塊中。
+
+            引用資源:
+                利用 {StaticResource } 或 {DynamicResource } 來引用資源:
+                    StaticResource: 在 XAML 載入/解析時 (Load time) 就會解析資源，適合不會變動的資源，效能較好
+                    DynamicResource: 在執行時才會解析資源，適合會變動的資源，效能較差
+        -->
+        <Grid.Resources>
+            <!--BigLabelStyleDynamic 的基底為 App.xaml 的 BigLabelStyleBase-->
+            <Style x:Key="BigLabelStyleDynamic" TargetType="Label" BasedOn="{StaticResource BigLabelStyleBase}">
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--Row0 的 Label.Style 靜態引用此視窗-Grid.Resources 中定義的資源-->
+        <Label Grid.Row="0" Content="This style come from this.Grid(S)" Style="{StaticResource BigLabelStyleDynamic}" />
+        <!--Row1 的 Label.Style 動態引用此視窗-Grid.Resources 中定義的資源(於 .cs 中有設定 BigLabelStyleDynamic 動態變色)-->
+        <Label Grid.Row="1" Content="This style come from this.Grid(D)" Style="{DynamicResource BigLabelStyleDynamic}" />
+        <!--Row2 的 Label.Style 靜態引用 App.xaml-Application.Resources 中定義的資源-->
+        <Label Grid.Row="2" Content="This style come from App.xaml" Style="{StaticResource BigLabelStyleRed}" />
+    </Grid>
+</UserControl>
