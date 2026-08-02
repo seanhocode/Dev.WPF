@@ -1,5 +1,5 @@
 using System.Windows.Controls;
-using Example.WPF.Core.Model.DataBinding.DataContexts;
+using Example.WPF.Infrastructure.DataBinding.DataContexts;
 using Example.WPF.Infrastructure.Example.Attributes;
 
 namespace Example.WPF.DataBinding.DataContexts

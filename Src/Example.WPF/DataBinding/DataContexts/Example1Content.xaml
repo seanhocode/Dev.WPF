@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example.WPF.DataBinding.DataContexts"
-        xmlns:dataContexts="clr-namespace:Example.WPF.Core.Model.DataBinding.DataContexts;assembly=Example.WPF.Core"
+        xmlns:dataContexts="clr-namespace:Example.WPF.Infrastructure.DataBinding.DataContexts;assembly=Example.WPF.Infrastructure"
         mc:Ignorable="d">
     <!-- 
         1. 宣告與指派資料來源:

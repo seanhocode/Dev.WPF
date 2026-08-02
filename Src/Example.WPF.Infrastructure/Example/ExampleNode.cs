@@ -2,17 +2,34 @@
 
 namespace Example.WPF.Infrastructure.Example
 {
+    /// <summary>
+    /// MainWindow 中 ExampleTreeView 的節點資訊
+    /// </summary>
     public class ExampleNode
     {
+        /// <summary>
+        /// TreeView 節點標題名稱
+        /// </summary>
         public required string Title { get; set; }
 
-        // 若為分類節點，此屬性為 null；若為具體範例，則記錄該 UserControl 的 Type
-        public Type? TargetType { get; set; }
+        /// <summary>
+        /// 節點對應的範例內容 Type
+        /// </summary>
+        public Type? ExampleContent { get; set; }
 
-        public Type? DefinitionType { get; set; }
+        /// <summary>
+        /// 節點對應的定義內容 Type
+        /// </summary>
+        public Type? DefinitionContent { get; set; }
 
+        /// <summary>
+        /// TreeView 此節點的子節點
+        /// </summary>
         public ObservableCollection<ExampleNode> SubNodes { get; set; } = new ObservableCollection<ExampleNode>();
 
-        public bool IsExample => TargetType != null;
+        /// <summary>
+        /// 判斷此節點是否為範例節點
+        /// </summary>
+        public bool IsExample => ExampleContent != null;
     }
 }

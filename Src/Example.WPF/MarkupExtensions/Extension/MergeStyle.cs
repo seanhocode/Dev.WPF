@@ -21,7 +21,7 @@ namespace Example.WPF.MarkupExtensions.Extension
          *      當 XAML 解析器遇到這個 MarkupExtension 時，
          *      會呼叫 ProvideValue 方法來獲取實際的值，override ProvideValue 來自定義返回的值。
          */
-        public override object ProvideValue(IServiceProvider serviceProvider)
+        public override object? ProvideValue(IServiceProvider serviceProvider)
         {
             if (BasedOn == null || MergeWith == null)
                 return BasedOn ?? MergeWith;

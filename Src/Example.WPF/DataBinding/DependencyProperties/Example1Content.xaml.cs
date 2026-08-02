@@ -1,4 +1,4 @@
-using Example.WPF.Core.Model.DataBinding.DataContexts;
+using Example.WPF.Infrastructure.DataBinding.DataContexts;
 using Example.WPF.Infrastructure.Example.Attributes;
 using Example.WPF.Core.Model.Definition.DataBinding.DependencyProperties;
 using System.Windows.Controls;

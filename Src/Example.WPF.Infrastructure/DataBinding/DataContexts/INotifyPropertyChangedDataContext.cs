@@ -1,8 +1,11 @@
 ﻿using System.ComponentModel;
 
-namespace Example.WPF.Core.Model.DataBinding.DataContexts
+namespace Example.WPF.Infrastructure.DataBinding.DataContexts
 {
-    // 要實現資料更新反饋至 UI 的功能，必須繼承 INotifyPropertyChanged 介面並實作 PropertyChanged 事件
+    /// <summary>
+    /// 一個實作 INotifyPropertyChanged 介面的 DataContext 範例
+    /// </summary>
+    /// <remarks>要實現資料更新反饋至 UI 的功能，必須繼承 INotifyPropertyChanged 介面並實作 PropertyChanged 事件</remarks>
     public class INotifyPropertyChangedDataContext : INotifyPropertyChanged
     {
         private double _INotifyPropertyChangedDataContextValue;

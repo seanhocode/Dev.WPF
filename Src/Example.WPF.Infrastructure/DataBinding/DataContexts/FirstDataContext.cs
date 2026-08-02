@@ -1,7 +1,7 @@
-﻿namespace Example.WPF.Core.Model.DataBinding.DataContexts
+﻿namespace Example.WPF.Infrastructure.DataBinding.DataContexts
 {
     /// <summary>
-    /// 資料綁定範例，此類別扮演資料環境 (DataContext) 的角色
+    /// 一個基本的類別
     /// </summary>
     /// <remarks>
     /// <para>C# 程式碼中綁定的類別被稱作資料環境 (DataContext)，也可以當作是資料綁定的來源 (Binding Source)</para>
@@ -10,9 +10,10 @@
     public class FirstDataContext
     {
         private double _FirstDataContextValue;
+        private string? _FirstDataContextTextValue;
 
         /// <summary>
-        /// 提供給前端 XAML 綁定的屬性
+        /// 提供給前端 XAML 綁定的屬性(double)
         /// </summary>
         /// <remarks>名稱須與 XAML 中的 {Binding FirstDataContextValue} 一致</remarks>
         public double FirstDataContextValue
@@ -39,7 +40,9 @@
             }
         }
 
-        private string? _FirstDataContextTextValue;
+        /// <summary>
+        /// 提供給前端 XAML 綁定的屬性(string)
+        /// </summary>
         public string? FirstDataContextTextValue
         {
             get { return _FirstDataContextTextValue; }

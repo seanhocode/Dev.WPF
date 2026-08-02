@@ -16,8 +16,9 @@ public partial class MainWindow : Window
     }
 
     /// <summary>
-    /// 掃描當前 Assembly 中所有帶有 ExampleAttribute 的 UserControl 類別，並將其組織成樹狀結構以顯示在 TreeView 中
+    /// 載入範例資料
     /// </summary>
+    /// <remarks>掃描當前 Assembly 中所有帶有 ExampleAttribute 的 UserControl 類別，並將其資訊整理成 ExampleNode 結構，並綁定到 TreeView 上</remarks>
     private void LoadExamples()
     {
         ObservableCollection<ExampleNode> rootNodes = new ObservableCollection<ExampleNode>();
@@ -57,8 +58,8 @@ public partial class MainWindow : Window
                 currentLevel.Add(new ExampleNode
                 {
                     Title = attr.Title,
-                    TargetType = type,
-                    DefinitionType = attr.DefinitionType
+                    ExampleContent = type,
+                    DefinitionContent = attr.DefinitionType
                 });
             }
         }
@@ -67,8 +68,9 @@ public partial class MainWindow : Window
     }
 
     /// <summary>
-    /// 當 TreeView 的選取項目改變時，動態載入對應的 UserControl 並顯示在 MainContent 中。
+    /// ExampleTreeView 的選取項目改變事件處理器
     /// </summary>
+    /// <remarks>當 TreeView 的選取項目改變時，根據選取的 ExampleNode 動態載入對應的範例與定義 Content</remarks>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void ExampleTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -81,16 +83,16 @@ public partial class MainWindow : Window
                 {
                     UserControl? exampleControl;
                     // 實例化上半部的 UI 範例
-                    if (selectedNode.TargetType != null)
+                    if (selectedNode.ExampleContent != null)
                     {
-                        exampleControl = (UserControl?)Activator.CreateInstance(selectedNode.TargetType);
+                        exampleControl = (UserControl?)Activator.CreateInstance(selectedNode.ExampleContent);
                         ExampleContent.Content = exampleControl;
                     }
 
                     // 實例化下半部的 定義 (Definition)
-                    if (selectedNode.DefinitionType != null)
+                    if (selectedNode.DefinitionContent != null)
                     {
-                        Object? definitionInstance = Activator.CreateInstance(selectedNode.DefinitionType);
+                        Object? definitionInstance = Activator.CreateInstance(selectedNode.DefinitionContent);
                         DefinitionContent.Content = definitionInstance;
                     }
                     else

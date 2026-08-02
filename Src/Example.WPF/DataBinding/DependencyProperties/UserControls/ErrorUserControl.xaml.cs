@@ -3,7 +3,7 @@
 namespace Example.WPF.DataBinding.DependencyProperties.UserControls
 {
     /// <summary>
-    /// 相依物件 (DependencyObject) 錯誤範例
+    /// 一個預設且沒有經過處理的 UserControl 範例
     /// </summary>
     /// <remarks>未設定 DependencyProperty，因此無法進行資料繫結</remarks>
     public partial class ErrorUserControl : UserControl
@@ -13,6 +13,9 @@ namespace Example.WPF.DataBinding.DependencyProperties.UserControls
             InitializeComponent();
         }
 
-        public double ErrorUserControlValue { get; set; }
+        /// <summary>
+        /// 一個預設沒有任何處理的屬性
+        /// </summary>
+        public double DefaultAttributelValue { get; set; }
     }
 }
